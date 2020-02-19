@@ -1,0 +1,853 @@
+\documentclass[compress,mathserif,aspectratio=169]{beamer}
+\usepackage[latin2]{inputenc}
+%\usepackage[absolute]{textpos}
+%\documentclass[handout,compress,mathserif]{beamer}
+%\setbeameroption{show notes}
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice.
+
+
+\mode<presentation>
+{
+%  \usetheme{pittsburgh}
+  % or ...
+
+  \setbeamercovered{invisible}
+  % or whatever (possibly just delete it)
+}
+
+
+\usepackage[USenglish]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{ifthen,array}
+
+
+
+\pretolerance5000 \hyphenpenalty9999
+%\setlength{\TPHorizModule}{0.5cm} \setlength{\TPVertModule}{0.5cm}
+%\textblockorigin{20mm}{20mm} % start everything near the top-left corner
+
+\newcounter{ora}
+\newcounter{perc}
+\newcounter{kezdoora}
+\newcounter{kezdoperc}
+\newcounter{percek}
+\setcounter{percek}{15}
+\setcounter{kezdoora}{4} % for 1.35pm as the starting time
+
+\providecommand{\leadingzero}[1]{\ifthenelse{\value{#1}<10}{0\arabic{#1}}{\arabic{#1}}}
+\providecommand{\oradisplay}[1]{\ifthenelse{\value{#1}<60}{\arabic{kezdoora}:\leadingzero{#1}}{\setcounter{perc}{\value{#1}}\addtocounter{perc}{-60}\setcounter{ora}{\value{kezdoora}}\addtocounter{ora}{1}\arabic{ora}:\leadingzero{perc}}}
+
+\providecommand{\notes}[1]{{\tiny\textbf{Note:} #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hasznos matek makrok
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\QED}{{}\hfill$\Box$}
+\newcommand{\intl}[4]{\int_{#1}^{#2} \! {#3} \, \mathrm d{#4}}
+\newcommand{\period}{\text{.}} % Ez azert kell, mert a matek . mashogy nez ki, mint a szovege.
+\newcommand{\comma}{\text{,}}  % Ez azert kell, mert a matek , mashogy nez ki, mint a szovege.
+\newcommand{\dist}{\,\mathop{\operatorname{\sim\,}}\limits}
+\newcommand{\D}{\,\mathop{\operatorname{d}}\!}
+%\newcommand{\E}{\mathop{\operatorname{E}}\nolimits}
+\newcommand{\Lag}{\mathop{\operatorname{L}}}
+\newcommand{\plim}{\mathop{\operatorname{plim}}\limits_{T\to\infty}\,}
+\newcommand{\CES}[3]{\mathop{\operatorname{CES}}\left(\left\{#1\right\},\left\{#2\right\},#3\right)}
+\newcommand{\cestwo}[5]{\left[#1^\frac1{#5}\,#2^\frac{#5-1}{#5}+#3^\frac1{#5}\,#4^\frac{#5-1}{#5}\right]^\frac{#5}{#5-1}}
+\newcommand{\cesmore}[4]{\left[\sum_{#3}#1_{#3}^\frac1{#4}\,{#2}_{#3}^\frac{#4-1}{#4}\right]^\frac{#4}{#4-1}}
+\newcommand{\cesPtwo}[5]{\left[#1\,#2^{1-#5}+#3\,#4^{1-#5}\right]^\frac{1}{1-#5}}
+\newcommand{\cesPmore}[4]{\left[\sum_{#3}#1_{#3}\,#2_{#3}^{1-#4}\right]^\frac{1}{1-#4}}
+\newcommand{\diff}[2]{\frac{\D #1}{\D #2}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\convex}[2]{\lambda #1 + (1-\lambda)#2}
+\newcommand{\ABS}[1]{\left| #1 \right|}
+\newcommand{\suchthat}{:\hskip1em}
+\newcommand{\dispfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2}} % Emeletes tortekhez hasznos.
+
+\newcommand{\diag}{\mathop{\mathrm{diag\mathstrut}}}
+\newcommand{\tr}{\mathop{\mathrm{tr\mathstrut}}}
+\newcommand{\E}{\mathop{\mathrm{E\mathstrut}}}
+\newcommand{\Var}{\mathop{\mathrm{Var\mathstrut}}\nolimits}
+\newcommand{\Cov}{\mathop{\mathrm{Cov\mathstrut}}}
+\newcommand{\sgn}{\mathop{\operatorname{sgn\mathstrut}}}
+
+\newcommand{\covmat}{\mathbf\Sigma}
+\newcommand{\ones}{\mathbf 1}
+\newcommand{\zeros}{\mathbf 0}
+\newcommand{\BAR}[1]{\overline{#1}}
+
+\renewcommand{\time}[1]{\addtocounter{percek}{#1}}
+
+\newlength{\tempsep}
+
+\newenvironment{subeqs}{\setlength{\tempsep}{\arraycolsep}
+\setlength{\arraycolsep}{0.13889em} % Ez azert kell, hogy ne hagyjon tul sok helyet az = korul.
+\begin{subequations}\begin{eqnarray}}
+{\end{eqnarray}\end{subequations}
+\setlength{\arraycolsep}{\tempsep}}
+
+\newenvironment{tapad}{\setlength{\tempsep}{\arraycolsep}
+\setlength{\arraycolsep}{0.13889em}} % Ez azert kell, hogy ne hagyjon tul sok helyet az = korul.
+{\setlength{\arraycolsep}{\tempsep}}
+
+\newenvironment{eqnarr}{\setlength{\tempsep}{\arraycolsep}
+\setlength{\arraycolsep}{0.13889em} % Ez azert kell, hogy ne hagyjon tul sok helyet az = korul.
+\begin{eqnarray}}
+{\end{eqnarray} \setlength{\arraycolsep}{\tempsep}}
+
+\newenvironment{eqnarr*}{\setlength{\tempsep}{\arraycolsep}
+\setlength{\arraycolsep}{0.13889em} % Ez azert kell, hogy ne hagyjon tul sok helyet az = korul.
+\begin{eqnarray*}}
+{\end{eqnarray*} \setlength{\arraycolsep}{\tempsep}}
+
+
+%\usepackage[active]{srcltx} % SRC Specials: DVI [Inverse] Search
+% Fuzz --- -------------------------------------------------------
+\hfuzz5pt % Don't bother to report over-full boxes < 5pt
+\vfuzz5pt % Don't bother to report over-full boxes < 5pt
+% THEOREMS -------------------------------------------------------
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+
+
+
+
+\newcommand{\directory}{figures}
+\newcommand*{\newtitle}{\egroup\begin{frame}\frametitle}
+
+\newcommand{\fullpagefigure}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{center}\includegraphics[height=0.9\textheight]{\directory/#1}\end{center}}}\end{frame}}
+\newcommand{\widefigure}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{center}\includegraphics[width=\linewidth]{\directory/#1}\end{center}}}\end{frame}}
+\newcommand{\longfigure}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{center}\includegraphics[height=0.8\textheight]{\directory/#1}\end{center}}}\end{frame}}
+%\newcommand{\fullpagefigure}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{centering}$#1$\end{centering}}}\end{frame}}
+\newcommand{\answer}[1]{\begin{itemize}\item #1\end{itemize}}
+
+
+\newcommand{\jumpto}[2]{\hypertarget{#1back}{\hyperlink{#1}{#2}}}
+\newcommand{\backto}[2]{\hypertarget{#1}{\hyperlink{#1back}{#2}}}
+
+
+\title{ECBS 6060: International Trade\\
+Winter 2020}
+
+\author{Mikl\'os Koren\\
+korenm@ceu.edu}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+
+\date % (optional, should be abbreviation of conference name)
+{}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+%\subject{Theoretical Computer Science}
+% This is only inserted into the PDF information catalog. Can be left
+% out.
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+\pgfdeclareimage[height=0.5cm]{university-logo}{frblogo}
+%\logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSection[]
+{
+  \begin{frame}[plain]
+    \frametitle{\color{red}\insertsection}
+    \addtocounter{framenumber}{-1}
+    %\tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command:
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{{}\hfill\insertframenumber}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+    \addtocounter{framenumber}{-1}
+\end{frame}
+
+
+
+
+\section{Lecture 2: Patterns of trade}\hypertarget{Lecture 2: Patterns of trade}{}
+
+
+\begin{frame}\frametitle{Setup}\hypertarget{Setup}{}
+The country has 
+\begin{itemize}
+\item endowments (vector) $\mathbf v$
+
+\item production $\mathbf x$
+
+\item consumption $\mathbf c$
+
+\item prices $p$
+
+
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Technology and tastes}\hypertarget{Technology and tastes}{}
+\begin{itemize}
+\item Technology is represented by the revenue function
+\[
+r(p,\mathbf v) = \max_{\mathbf x} p\mathbf x: (\mathbf x,\mathbf v) \text{ feasible}.
+\]
+
+\item Tastes are represented by the expenditure function
+\[
+e(p,u) = \min_{\mathbf c} p\mathbf c: u(\mathbf c)=u.
+\]
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Supply and demand}\hypertarget{Supply and demand}{}
+\begin{itemize}
+\item Supply of goods (production)
+\[
+\mathbf x = r_p(p,\mathbf v).
+\]
+
+\item Demand for goods (consumption)
+\[
+\mathbf c = e_p(p,u).
+\]
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Autarky equilibrium}\hypertarget{Autarky equilibrium}{}
+\begin{itemize}
+\item \emph{Autarky}: the economy is closed, markets have to clear \emph{within} the country.
+
+\item In equilibrium, each product market clears,
+\[
+r_p(p,v) = e_p(p,u).
+\]
+
+\item Expenditure equals revenue
+\[
+r(p,v) = e(p,u).
+\]
+\pause
+
+
+
+\item What about factor markets?
+
+\item What about profit maximization?
+
+\item What about utility maximization?
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Trading equilibrium}\hypertarget{Trading equilibrium}{}
+\begin{itemize}
+\item We start with the small open economy.
+
+\item The world price is $p^w$ (arbitrary).
+
+\item At this price, the world buys and sells any amount.
+
+\item Net import of goods: 
+\[
+\mathbf m(p^w) = \mathbf c(p^w) - \mathbf x(p^w).
+\]
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Equilibrium conditions}\hypertarget{Equilibrium conditions}{}
+\begin{itemize}
+\item Balanced trade:
+\[
+0 = p^w \mathbf m = p^w(\mathbf c^w-\mathbf x^w) = 
+p^w[e_p(p^w,u^w) - r_p(p^w,\mathbf v)].
+\]
+
+\item Use Euler's theorem:
+\[
+r(p,\mathbf v) = e(p,u).
+\]
+
+
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Equilibrium conditions}\hypertarget{Equilibrium conditions}{}
+\begin{itemize}
+\item Goods market are now global, so local markets do not have to clear.
+\[
+\mathbf m(p^w) = e_p(p,u) - r_p(p,\mathbf v).
+\]
+
+\item What about factor markets?
+
+
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Gains from trade}\hypertarget{Gains from trade}{}
+\begin{itemize}
+\item Let $p^a$ denote the vector of autarky prices.
+\begin{align*}
+ e(p^w,u^a) & \le p^w\mathbf c^a\\
+    &= p^w\mathbf x^a\\
+    &\le r(p^w,\mathbf v)\\
+    & = e(p^w,u^w)
+\end{align*}
+\pause
+
+
+\begin{enumerate}\setcounter{enumi}{0}
+\item Definition of the expenditure function.
+
+\item Autarky equilibrium.
+
+\item Definition of the revenue function.
+
+\item Open-economy equilibrium.
+
+
+\end{enumerate}
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Gains from trade}\hypertarget{Gains from trade}{}
+\begin{itemize}
+\item Since $e(p,u)$ is increasing in $u$,
+\[
+ u^w\ge u^a.
+\]
+
+\item Welfare is higher under trade than under autarky.
+
+\item Note that this holds for any $p^w$.
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Graphical illustration with PPS}\hypertarget{Graphical illustration with PPS}{}
+
+
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Discussion}\hypertarget{Discussion}{}
+\begin{itemize}
+\item Moving from autarky to free trade always improves \emph{aggregate welfare}.
+
+\item What we assumed:
+\begin{enumerate}\setcounter{enumi}{0}
+\item representative consumer/producer
+
+\item constant returns to scale technologies
+
+\item perfect competition
+
+\item no externalities / market failures
+
+
+\end{enumerate}
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{The equivalence of trade and technology}\hypertarget{The equivalence of trade and technology}{}
+\begin{itemize}
+\item Trade is a ``technology" to transform export goods into import goods.
+
+\item As long as technology use is voluntary, having access to it is welfare improving.
+
+\item There may be important distributional consequences (to be discussed later).
+\begin{itemize}
+\item Attitudes toward trade should be similar to attitudes toward technical progress.
+
+
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{2-country case}\hypertarget{2-country case}{}
+\begin{itemize}
+\item Because the country gains for any $p^w$, when two countries open up to trade, \emph{both gain}.
+
+
+
+
+
+
+
+
+
+
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+\section{Patterns of trade}\hypertarget{Patterns of trade}{}
+\begin{frame}\frametitle{Patterns of trade}\hypertarget{Patterns of trade}{}
+\begin{itemize}
+\item How much can we say about the patterns of trade without talking about technologies, endowments, and tastes?
+
+\item Quite a lot. These are all summarized in the \emph{autarky equilibrium price}.
+
+\item Deardorff (1980, JPE) derived the law of comparative advantage.
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{The law of comparative advantage}\hypertarget{The law of comparative advantage}{}
+\begin{itemize}
+\item Balanced trade:
+\[
+p^w \mathbf m = 0.
+\]
+
+\item Autarky consumption is affordable at world prices,
+\[
+p^w\mathbf c^a \le p^w\mathbf c^w.
+\]
+Why?
+\pause
+
+
+\begin{enumerate}\setcounter{enumi}{0}
+\item $p^w\mathbf x^a\le p^w\mathbf x^w$ by revenue maximization. ($\mathbf x^a$ is still feasible to produce, but brings less revenue.)
+
+\item $p^w\mathbf x^a=p^w\mathbf c^a$ by market clearing.
+
+\item $p^w\mathbf x^w=p^w\mathbf c^w$ by balanced trade.
+
+
+
+
+\end{enumerate}
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{The law of comparative advantage}\hypertarget{The law of comparative advantage}{}
+\begin{itemize}
+\item Autarky consumption is affordable under free trade, yet not chosen.
+
+\item By the \emph{weak axiom of revealed preference}:
+\[
+p^a\mathbf c^w > p^a\mathbf c^a.
+\]
+
+\item By revenue maximization,
+\[
+p^a\mathbf x^w \le p^a\mathbf x^a.
+\]
+
+\item Subtract the value of production, $p^a\mathbf x^w$ and $p^a \mathbf x^a$:
+\[
+p^a(\mathbf c^w-\mathbf x^w) = p^a\mathbf m > p^a(\mathbf c^a-\mathbf x^a)=0.
+\]
+
+\item \emph{The autarky cost of the net import vector is positive}.
+
+\item Equivalently,
+\[
+(p^a-p^w)\mathbf m > 0.
+\]
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{The 2-good case}\hypertarget{The 2-good case}{}
+\begin{itemize}
+\item For two goods, this means $m_i>0$ if and only if $p^a_i>p^w_i$.
+
+\item The country exports the product which has a low autarky price relative to the world price.
+
+\item The country imports the product which has a high autarky price relative to the world price.
+
+\item (How does this relate to ``Buy cheap, sell dear?")
+
+\item There is no such strong conclusion for the $n$-good case. We only have a correlation of prices and trade patterns.
+
+
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{The 2-country case}\hypertarget{The 2-country case}{}
+\begin{itemize}
+\item In a 2-country world, net imports of country 1 are net exports of country 2:
+\[
+\mathbf m = -\mathbf M.
+\]
+
+\item (We use uppercase letters for country 2.)
+
+\item The law of CA holds in both countries
+\begin{align*}
+p^a\mathbf m &>0,\\
+P^a\mathbf M &>0.
+\end{align*}
+
+\item Summing the two
+\[
+(p^a-P^a) \mathbf m >0.
+\]
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{The 2$\times$2 case}\hypertarget{The 2$\times$2 case}{}
+%% redo this
+\begin{itemize}
+\item Goods flow from the low autarky price country to the high autarky price country.
+\[
+(p^a-P^a) \mathbf m >0.
+\]
+
+\item Balanced trade
+\[
+p^w m = 0.
+\]
+
+\item With two goods, this implies
+\[
+\frac{p^a_1}{p^a_2} < \frac{p^w_1}{p^w_2} < \frac{P^a_1}{P^a_2}
+\]
+if good 1 is exported and the reverse if good 2..
+
+\item We can narrow down the prices in trade equilibrium.
+
+\item Again, no such strong conclusion for the $n$-good case.
+
+
+
+
+
+
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+\section{Evidence on general trade theorems}\hypertarget{Evidence on general trade theorems}{}
+
+
+
+
+
+
+\section{Trade and welfare}\hypertarget{Trade and welfare}{}
+\begin{frame}\frametitle{Estimable equation}\hypertarget{Estimable equation}{}
+\begin{itemize}
+\item Let $y_i=Y_i/L_i$ denote GDP \emph{per capita} of country $i$.
+
+\item $T_i=(X_i+M_i)/Y_i$ measures the trade openness of country $i$.
+
+\item One way of capturing the benefits of trade is to say that
+\begin{itemize}
+\item per capita income is increasing in openness.
+\pause
+
+
+\end{itemize}
+
+\[
+y_i = \beta_0 + \beta_1 T_i + u_i
+\]
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Identification problem}\hypertarget{Identification problem}{}
+\begin{itemize}
+\item $\beta_1$ should measure the effect of a change in $T_i$ \emph{holding other factors fixed} ($u_i$)
+
+\item Countries with high $T_i$ have different $u_i$.
+\begin{itemize}
+\item \alert{Reverse causality}: richer countries trade more.
+
+\item \alert{Omitted variables}: institutions, macro policies may affect both $y_i$ and $T_i$.
+\end{itemize}
+
+\item Both lead to an \alert{endogeneity bias}.
+\begin{itemize}
+\item Coefficient estimated by OLS does not capture \emph{causal} effect.
+
+
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Natural experiments}\hypertarget{Natural experiments}{}
+\begin{itemize}
+\item These are events creating variation in openness \emph{uncorrelated with} income.
+
+\item Two key assumptions:
+\begin{enumerate}\setcounter{enumi}{0}
+\item event (or other variable) correlated with trade
+
+\item holding trade fixed, uncorrelated with income
+
+
+
+
+\end{enumerate}
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Four natural experiments}\hypertarget{Four natural experiments}{}
+\begin{enumerate}\setcounter{enumi}{0}
+\item Japan 1851
+
+\item US 1808
+
+\item Suez Canal 1967
+
+\item Air freight 1950--1990
+
+
+
+
+\end{enumerate}
+\end{frame}
+
+
+
+
+
+
+
+\section{Law of comparative advantage}\hypertarget{Law of comparative advantage}{}
+\begin{frame}\frametitle{Empirical tests}\hypertarget{Empirical tests}{}
+\begin{itemize}
+\item It is difficult to test these predictions directly, because autarky prices are a counterfactual construct.
+
+\item We rarely see countries both in trade and in autarky with the same technology, endowments and preferences.
+
+\item Bernhofen and Brown (2004, JPE): Japan's opening in the 19th century.
+
+\item Irwin (2005, RIE): self-imposed trade embargo of the U.S. in 1808.
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{The natural experiment of Japan}\hypertarget{The natural experiment of Japan}{}
+\begin{itemize}
+\item Japan cut itself off from all trade between 1639 and 1853.
+
+\item (Except for a small Dutch trading post off the Nagasaki harbor.)
+
+\item At the pressure of Western powers, it opened rapidly between 1853 and 1858.
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Measurement}\hypertarget{Measurement}{}
+\begin{itemize}
+\item Autarky: 1851--53 (so that production possibilities and tastes are close to trade period)
+
+\item Trade: 1868--75.
+
+\item Prices are from merchant's books.
+
+
+\end{itemize}
+\end{frame}
+
+
+
+
+\longfigure{japan-trade}{Export and import commodities of Japan}
+\longfigure{autarky-prices}{Change in prices and net export}
+\widefigure{lawofca}{Autarky cost of the net export vector}
+
+
+\begin{frame}\frametitle{Results}\hypertarget{Results}{}
+\begin{itemize}
+\item Autarky prices of export goods were generally lower than trade prices.
+
+\item Autarky prices of import goods were generally higher than trade prices.
+
+\item The autarky cost of the net import vector was negative.
+
+\item Confirming the law of comparative advantage.
+
+\item Bernhofen and Brown (2005, AER): autarky may have cost up to 8--9\% of Japan's GDP
+
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{The natural experiment in the U.S.}\hypertarget{The natural experiment in the U.S.}{}
+\begin{itemize}
+\item In 1807, U.S. Congress enacted an embargo on maritime trade.
+\begin{enumerate}\setcounter{enumi}{0}
+\item To protect American vessels and crew from British (and French) harassment.
+
+\item To put economic costs on Britain.
+\end{enumerate}
+
+\item The embargo was widely observed and almost "sealed off" the U.S. from the ROW.
+
+\item Domestic prices of export and import goods have changed substantially.
+
+
+\end{itemize}
+\end{frame}
+
+
+
+
+\widefigure{tonnage}{Tonnage of American ships entering Britain}
+\widefigure{us-exports}{Domestic wholesale price of export commodities}
+\widefigure{us-imports}{Price index of import commodities}
+
+
+\longfigure{suez-1st-stage}{The Suez Canal closure reduced trade between country pairs (Feyrer 2009)}
+\widefigure{suez-2nd-stage}{Thereby leading to lower GDP per capita (Feyrer 2009)}
+
+
+\begin{frame}\frametitle{Results}\hypertarget{Results}{}
+\begin{itemize}
+\item Exports became cheaper, imports became more expensive.
+
+\item Consistently with the law of comparative advantage.
+
+
+
+
+
+
+
+
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+\end{document}

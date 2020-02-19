@@ -1,0 +1,290 @@
+% ./preamble.tex
+= Lecture 2: Patterns of trade =
+
+== Setup ==
+The country has 
+    * endowments (vector) $\mathbf v$
+    * production $\mathbf x$
+    * consumption $\mathbf c$
+    * prices $p$
+
+== Technology and tastes ==
+* Technology is represented by the revenue function
+\[
+r(p,\mathbf v) = \max_{\mathbf x} p\mathbf x: (\mathbf x,\mathbf v) \text{ feasible}.
+\]
+* Tastes are represented by the expenditure function
+\[
+e(p,u) = \min_{\mathbf c} p\mathbf c: u(\mathbf c)=u.
+\]
+
+== Supply and demand ==
+* Supply of goods (production)
+\[
+\mathbf x = r_p(p,\mathbf v).
+\]
+* Demand for goods (consumption)
+\[
+\mathbf c = e_p(p,u).
+\]
+
+== Autarky equilibrium ==
+* ''Autarky'': the economy is closed, markets have to clear ''within'' the country.
+* In equilibrium, each product market clears,
+\[
+r_p(p,v) = e_p(p,u).
+\]
+* Expenditure equals revenue
+\[
+r(p,v) = e(p,u).
+\]
+...
+* What about factor markets?
+* What about profit maximization?
+* What about utility maximization?
+
+== Trading equilibrium ==
+* We start with the small open economy.
+* The world price is $p^w$ (arbitrary).
+* At this price, the world buys and sells any amount.
+* Net import of goods: 
+\[
+\mathbf m(p^w) = \mathbf c(p^w) - \mathbf x(p^w).
+\]
+    
+== Equilibrium conditions ==
+* Balanced trade:
+\[
+0 = p^w \mathbf m = p^w(\mathbf c^w-\mathbf x^w) = 
+p^w[e_p(p^w,u^w) - r_p(p^w,\mathbf v)].
+\]
+* Use Euler's theorem:
+\[
+r(p,\mathbf v) = e(p,u).
+\]
+
+
+== Equilibrium conditions ==
+* Goods market are now global, so local markets do not have to clear.
+\[
+\mathbf m(p^w) = e_p(p,u) - r_p(p,\mathbf v).
+\]
+* What about factor markets?
+
+
+== Gains from trade ==
+* Let $p^a$ denote the vector of autarky prices.
+\begin{align*}
+ e(p^w,u^a) & \le p^w\mathbf c^a\\
+    &= p^w\mathbf x^a\\
+    &\le r(p^w,\mathbf v)\\
+    & = e(p^w,u^w)
+\end{align*}
+...
+    1. Definition of the expenditure function.
+    2. Autarky equilibrium.
+    3. Definition of the revenue function.
+    4. Open-economy equilibrium.
+
+== Gains from trade ==
+* Since $e(p,u)$ is increasing in $u$,
+\[
+ u^w\ge u^a.
+\]
+* Welfare is higher under trade than under autarky.
+* Note that this holds for any $p^w$.
+
+== Graphical illustration with PPS ==
+
+== Discussion ==
+* Moving from autarky to free trade always improves ''aggregate welfare''.
+* What we assumed:
+    1. representative consumer/producer
+    2. constant returns to scale technologies
+    2. perfect competition
+    3. no externalities / market failures
+
+== The equivalence of trade and technology ==
+* Trade is a ``technology" to transform export goods into import goods.
+* As long as technology use is voluntary, having access to it is welfare improving.
+* There may be important distributional consequences (to be discussed later).
+    * Attitudes toward trade should be similar to attitudes toward technical progress.
+
+== 2-country case ==
+* Because the country gains for any $p^w$, when two countries open up to trade, ''both gain''.
+
+
+
+
+
+= Patterns of trade =
+== Patterns of trade ==
+* How much can we say about the patterns of trade without talking about technologies, endowments, and tastes?
+* Quite a lot. These are all summarized in the ''autarky equilibrium price''.
+* Deardorff (1980, JPE) derived the law of comparative advantage.
+
+== The law of comparative advantage ==
+* Balanced trade:
+\[
+p^w \mathbf m = 0.
+\]
+* Autarky consumption is affordable at world prices,
+\[
+p^w\mathbf c^a \le p^w\mathbf c^w.
+\]
+Why?
+...
+    1. $p^w\mathbf x^a\le p^w\mathbf x^w$ by revenue maximization. ($\mathbf x^a$ is still feasible to produce, but brings less revenue.)
+    2. $p^w\mathbf x^a=p^w\mathbf c^a$ by market clearing.
+    3. $p^w\mathbf x^w=p^w\mathbf c^w$ by balanced trade.
+
+
+== The law of comparative advantage ==
+* Autarky consumption is affordable under free trade, yet not chosen.
+* By the ''weak axiom of revealed preference'':
+\[
+p^a\mathbf c^w > p^a\mathbf c^a.
+\]
+* By revenue maximization,
+\[
+p^a\mathbf x^w \le p^a\mathbf x^a.
+\]
+* Subtract the value of production, $p^a\mathbf x^w$ and $p^a \mathbf x^a$:
+\[
+p^a(\mathbf c^w-\mathbf x^w) = p^a\mathbf m > p^a(\mathbf c^a-\mathbf x^a)=0.
+\]
+* ''The autarky cost of the net import vector is positive''.
+* Equivalently,
+\[
+(p^a-p^w)\mathbf m > 0.
+\]
+
+== The 2-good case ==
+* For two goods, this means $m_i>0$ if and only if $p^a_i>p^w_i$.
+* The country exports the product which has a low autarky price relative to the world price.
+* The country imports the product which has a high autarky price relative to the world price.
+* (How does this relate to ``Buy cheap, sell dear?")
+* There is no such strong conclusion for the $n$-good case. We only have a correlation of prices and trade patterns.
+
+
+== The 2-country case ==
+* In a 2-country world, net imports of country 1 are net exports of country 2:
+\[
+\mathbf m = -\mathbf M.
+\]
+* (We use uppercase letters for country 2.)
+* The law of CA holds in both countries
+\begin{align*}
+p^a\mathbf m &>0,\\
+P^a\mathbf M &>0.
+\end{align*}
+* Summing the two
+\[
+(p^a-P^a) \mathbf m >0.
+\]
+
+== The 2$\times$2 case ==
+%% redo this
+* Goods flow from the low autarky price country to the high autarky price country.
+\[
+(p^a-P^a) \mathbf m >0.
+\]
+* Balanced trade
+\[
+p^w m = 0.
+\]
+* With two goods, this implies
+\[
+\frac{p^a_1}{p^a_2} < \frac{p^w_1}{p^w_2} < \frac{P^a_1}{P^a_2}
+\]
+if good 1 is exported and the reverse if good 2..
+* We can narrow down the prices in trade equilibrium.
+* Again, no such strong conclusion for the $n$-good case.
+
+
+
+= Evidence on general trade theorems = 
+
+= Trade and welfare =
+== Estimable equation ==
+* Let $y_i=Y_i/L_i$ denote GDP ''per capita'' of country $i$.
+* $T_i=(X_i+M_i)/Y_i$ measures the trade openness of country $i$.
+* One way of capturing the benefits of trade is to say that
+    * per capita income is increasing in openness.
+...
+\[
+y_i = \beta_0 + \beta_1 T_i + u_i
+\]
+
+== Identification problem ==
+* $\beta_1$ should measure the effect of a change in $T_i$ ''holding other factors fixed'' ($u_i$)
+* Countries with high $T_i$ have different $u_i$.
+    * '''Reverse causality''': richer countries trade more.
+    * '''Omitted variables''': institutions, macro policies may affect both $y_i$ and $T_i$.
+* Both lead to an '''endogeneity bias'''.
+    * Coefficient estimated by OLS does not capture ''causal'' effect.
+
+== Natural experiments ==
+* These are events creating variation in openness ''uncorrelated with'' income.
+* Two key assumptions:
+    1. event (or other variable) correlated with trade
+    2. holding trade fixed, uncorrelated with income
+
+
+== Four natural experiments ==
+1. Japan 1851
+2. US 1808
+2. Suez Canal 1967
+3. Air freight 1950--1990
+
+
+= Law of comparative advantage =
+== Empirical tests ==
+* It is difficult to test these predictions directly, because autarky prices are a counterfactual construct.
+* We rarely see countries both in trade and in autarky with the same technology, endowments and preferences.
+* Bernhofen and Brown (2004, JPE): Japan's opening in the 19th century.
+* Irwin (2005, RIE): self-imposed trade embargo of the U.S. in 1808.
+
+== The natural experiment of Japan ==
+* Japan cut itself off from all trade between 1639 and 1853.
+* (Except for a small Dutch trading post off the Nagasaki harbor.)
+* At the pressure of Western powers, it opened rapidly between 1853 and 1858.
+
+== Measurement ==
+* Autarky: 1851--53 (so that production possibilities and tastes are close to trade period)
+* Trade: 1868--75.
+* Prices are from merchant's books.
+
+== ==
+\longfigure{japan-trade}{Export and import commodities of Japan}
+\longfigure{autarky-prices}{Change in prices and net export}
+\widefigure{lawofca}{Autarky cost of the net export vector}
+
+== Results ==
+* Autarky prices of export goods were generally lower than trade prices.
+* Autarky prices of import goods were generally higher than trade prices.
+* The autarky cost of the net import vector was negative.
+* Confirming the law of comparative advantage.
+* Bernhofen and Brown (2005, AER): autarky may have cost up to 8--9\% of Japan's GDP
+
+== The natural experiment in the U.S. ==
+* In 1807, U.S. Congress enacted an embargo on maritime trade.
+    1. To protect American vessels and crew from British (and French) harassment.
+    2. To put economic costs on Britain.
+* The embargo was widely observed and almost "sealed off" the U.S. from the ROW.
+* Domestic prices of export and import goods have changed substantially.
+
+== ==
+\widefigure{tonnage}{Tonnage of American ships entering Britain}
+\widefigure{us-exports}{Domestic wholesale price of export commodities}
+\widefigure{us-imports}{Price index of import commodities}
+
+\longfigure{suez-1st-stage}{The Suez Canal closure reduced trade between country pairs (Feyrer 2009)}
+\widefigure{suez-2nd-stage}{Thereby leading to lower GDP per capita (Feyrer 2009)}
+
+== Results ==
+* Exports became cheaper, imports became more expensive.
+* Consistently with the law of comparative advantage.
+
+
+
