@@ -1,0 +1,331 @@
+% preamble.tex
+
+= Lecture 3: The gravity equation of trade volumes. Trade costs. = 
+
+== Outline ==
+* Today we start with our second question:
+    * Why do we trade so little?
+* We first establish the empirical patterns (little relative to what?).
+* Then we turn to ''trade costs'' as a potential reason for the missing trade.
+    * New models help quantify trade frictions and the gains from trade.
+
+= The missing trade =
+== The missing trade ==
+* Although trade has increased dramatically over time, it is till lower than predicted by theory.
+* We use two benchmarks:
+    1. frictionless trade with complete specialization
+    3. domestic vs foreign trade
+
+
+
+
+= The gravity equation =
+== Deriving the gravity equation ==
+* We can derive the gravity equation of trade volumes from any model that features complete specialization. 
+* ''Complete specialization'' means that each good is produced in ''only one country''. 
+
+== Preferences ==
+* With identical, homothetic preferences and free trade:
+\[
+ e(p,u^j) = u^j P(p).
+\]
+* Demand for good $i$ in country $j$:
+\[
+ c_i^j(p) = u^j P_i(p).
+\]
+* Substituting out $u^j$:
+\[
+ c_i^j(p) = E^j\frac{P_i(p)}{\sum_{i'} p_{i'}P_{i'}(P)} \equiv E^j b_i(p).
+\]
+
+    1. Each country consumes the goods in the same proportion, $b_i(p)$.
+    2. The income elasicity of each good is 1 for each country.
+
+== The supply side ==
+* Because of complete specialization, each good is only produced in one country.
+* Suppose good $i$ is produced in country $j$:
+\[
+ \sum_{k\in J} c_i^k = x_i^j.
+\]
+* How much of this good does country $k$ buy?
+\[
+ \frac{c_i^k}{\sum_{k'\in J} c_i^{k'}} = \frac{E^k}{E^w}.
+\]
+* The export of good $i$ from country $j$ to country $k$:
+\[
+ x_i^{j\to k} = \frac{E^j}{E^w}x_i^j.
+\]
+
+== The volume of trade ==
+* First we multiply by $p_i$ to get the value of the trade flow.
+* Let us add up all the goods that country $j$ produces:
+\[
+T^{j\to k} = \sum_i p_i x_i^{j\to k} = \frac{E^j}{E^w}\sum_ip_ix_i^j = \frac{E^jE^k}{E^w}.
+\]
+* This is exactly the gravity equation.
+
+== Reasons for complete specialization ==
+=== Armington assumption ===
+Armington (1969) assumes that consumers value each country's production ''as separate goods''. Complete specialization by assumption.
+
+=== Krugman model ===
+Because firms choose to differentiate their products (to economize on fixed costs), complete specialization is ''endogenously'' obtained.
+
+=== Ricardian models ===
+In Dornbusch, Fisher, Samuelson (1977) [see later], each good is only produced in one country.
+
+
+
+
+== Frictionless gravity ==
+* The gravity equation without trade costs:
+\[
+T^{j\to k} = \frac{E^jE^k}{E^w}.
+\]
+* We can measure all four variables involved.
+* We can then see whether the LHS of the gravity equation is lower than the RHS.
+* Let us look at a simple example.
+
+== Exports of Hungary ==
+* In 2006, the Hungarian industry sold EUR 86 billion worth of manufactured goods.
+    * 40 billion of this went to Hungary,
+    * 46 billion were exported.
+* Are these numbers consistent with gravity?
+
+== Income differences ==
+* Total (nominal) GDP of Hungary was around \$138 billion.
+* Total (nominal) GDP of the world was around \$54.6 trillion.
+* The rest of the world has a 0.9975 share in world income.
+* They should buy 0.9975 fraction of Hungarian output.
+    * EUR 85.78 billion
+
+== Missing trade ==
+* Relative to this 85.8 billion, only 46 billion is exported.
+* 47\% of trade is ''missing''.
+
+
+
+
+= A model with trade costs =
+== A model with trade costs ==
+* Take a differentiated good model.
+* Complete specialization.
+* But trade is costly.
+
+== How to model trade costs? ==
+* Shipping a good from country $j$ to $k$ costs $\tau^{jk}$.
+* But in what units?
+* Standard assumption (due to Samuelson, 1954): in units of the good being shipped, "iceberg cost".
+
+== Iceberg shipping costs ==
+* Only a certain ''fraction'' of the good arrives at the destination.
+    * iceberg melts
+    * grain spills
+    * china breaks
+    * goods get stole by pirates
+    * fuel trucks consume fuel
+* To ensure that 1 unit arrives, one has to ship $\tau^{jk}>1$ units of the good.
+
+== Why this assumption is convenient ==
+1. Transportation impacts no other market.
+2. Implies a ''proportional'' (rather than additive) increase in the good's price.
+    * Works well with constant markups
+    * and isoelastic demand.
+    
+== Consumer vs producer prices ==
+* ''Consumer price'' is \[\tilde p = \tau p.\]
+
+== Demand with iceberg trade costs ==
+* Consumers value all products symmetrically.
+    * But prices are now assymetric.
+* Utility:
+\[
+U = \left[\sum_{i=1}^{n}x_i^\alpha\right]^{1/\alpha}\text{ }0<\alpha<1
+\]
+* The demand for product $i$:
+\[
+x_i = E \frac{(\tau_i p_i)^{-\varepsilon}}{\sum_{j=1}^{n}(\tau_j p_j)^{1-\varepsilon}}
+\]
+
+
+== Deriving the gravity equation ==
+* Suppose each country produces one differentiated variety (Armington assumption).
+    * Same results with monopolistic competition (Krugman).
+    * Similar results with Ricardian model (Eaton-Kortum).
+* Demand for good $j$ in country $k$:
+\[
+T^{j\to k} = \frac{(\tau^{j\to k} p^j)^{1-\varepsilon}}{\sum_{i=1}^{n}(\tau^{i\to k} p^i)^{1-\varepsilon}}E^k
+\]
+* Add up across all $k$s to get total production:
+\[
+E^{j} = \sum_{k=1}^{n}\frac{(\tau^{j\to k} p^j)^{1-\varepsilon}E^k}{\sum_{i=1}^{n}(\tau^{i\to k} p^i)^{1-\varepsilon}}
+\]
+
+
+== Deriving the gravity equation ==
+* Substitute out $p^j$.
+* Express in terms of the usual gravity terms:
+\[
+T^{j\to k} = \frac{E^kE^j}{E^w}\left(\frac{\tau^{j\to k}}{\Pi^j P^k}\right)^{1-\varepsilon}
+\]
+* $\Pi^j$ is the average trade cots of a typical ''producer'' in country $j$:
+\[
+\Pi^j = \left[\sum_k \frac{E^k}{E^w}\left(\frac{\tau^{j\to k}}{P^k}\right)^{1-\varepsilon}\right]^{1/(1-\varepsilon)}
+\]
+* $P^k$ is the average trade cost of a typical ''consumer'' in country $k$.
+\[
+P^k = \left[\sum_j \frac{E^j}{E^w}\left(\frac{\tau^{j\to k}}{\Pi^j}\right)^{1-\varepsilon}\right]^{1/(1-\varepsilon)}
+\]
+
+== Bilateral trade costs ==
+* The higher $\tau^{j\to k}$, the lower the trade between countries $j$ and $k$.
+\[
+\frac{\partial \ln T^{j\to k}}{\partial \ln \tau^{j\to k}} = 1-\varepsilon
+\]
+* The higher the elasticity of substitution, the stronger the trade impact of trade costs.
+    * Why?
+* Estimates of $\varepsilon$ range from 2 to 10.
+
+== Bilateral trade costs ==
+* Trade costs are not often measured directly.
+* Instead,
+\[
+\ln \tau^{j\to k} = \gamma_0 + \gamma_1\ln d^{j\to k} + \gamma_2 Z^{j\to k} + u^{j\to k}.
+\]
+* Hence loglinear gravity equation:
+\[
+ \ln T^{j\to k} = \beta_0+\beta_1\ln E^j + \beta_2\ln E^k -\beta_3 \ln d^{j\to k} - \beta_4 Z^{j\to k} + \tilde u^{j\to k}.
+\]
+    * What is $\beta_3$?
+    * What is included in $\tilde u^{j\to k}$?
+    
+== Multilateral trade costs==
+* The terms $\Pi^j$ and $P^k$ capture ''multilateral resistence'':
+    * A consumer in a distant, secluded island pays high prices on almost everything.
+* Only ''relative transport costs'' matter.
+    * For this consumer, a transport cost of 20\% may not be that high.
+* Because of their nonlinear nature, it is difficult to estimate these average trade costs.
+
+
+= Estimates of trade costs =
+== Estimates of trade costs ==
+There are three ways to estimate trade costs:
+    1. direct measures
+        * transportation costs and time
+        * tariffs etc
+    2. indirect estimates from trade volumes
+        * trade is lower
+    3. indirect estimates from prices
+        * prices are higher
+
+
+== Direct measures ==
+* Price quotes from shipping companies.
+* Observed trade costs on actual transactions.
+* Prices (and values) are often recorded at multiple ''parities'':
+    * ex works (EXW): good has not been moved yet
+    * free on board (FOB): good is loaded onto ship
+    * cost, insurance, freight (CIF): good is delivered to destination port
+    * (plus many others)
+* Exports are usually recorded at FOB.
+* Imports are CIF.
+
+== ==
+\widefigure{incoterms}{Transport costs}
+\widefigure{hummels-iata}{Air freight charges over time}
+\widefigure{costimp}{Costs of container imports}
+
+
+== Direct measures ==
+* US import data contains values both at CIF and at FOB. 
+* The difference is insurance and shipping.
+* Hummels (2001, wp) relates these shipping costs to distance, mode of shipping, industry etc.
+* In ''ad valorem'' terms, they vary between 3-4\% (computer and office equipment) to over 20\% (coal, gas, fertilizers). 
+    * Table 1 here.
+
+== Indirect shipping costs ==
+* There are all kinds of nonpecuniary costs involved:
+  1. time
+  2. administration
+  3. reliability
+* The World Bank collects data on these from 181 countries (doingbusiness.org).
+
+== ==
+\widefigure{docimp}{Administrative costs of imports}
+\widefigure{timeimp}{Time costs of imports}
+
+
+
+= Indirect inference =
+== Indirect inference ==
+* We can infer trade costs indirectly from trade volumes as follows.
+* Suppose we believe that 
+\[
+\ln \tau^{j\to k} = \gamma Z^{j\to k},
+\]
+where $Z$ is some observable (do countries $j$ and $k$ speak a common language, do they have a common currency etc).
+* Plug it into the gravity equation
+\[
+ \ln T^{j\to k} = \beta_0+\beta_1\ln E^j + \beta_2\ln E^k - \delta Z^{j\to k} + \tilde u^{j\to k}.
+\]
+* The effect of $Z$ on trade costs:\[\gamma = \delta/(\sigma-1).\]
+
+== Issues with indirect inference ==
+1. Our model may be incorrect. (For example, complete vs incomplete specialization.)
+2. The error term may not be orthogonal to $Z$. 
+3. We can only identify ''slopes'', not ''levels''.
+
+
+== Examples of indirect inference ==
+* Anderson and van Wincoop (2004, JEL) provides a survey of trade cost estimates.
+* Ad valorem equivalents:
+    1. different languages: 7\%
+    2. different currencies: 14\%
+    3. national border (as opposed to state/province border): 28\%
+    4. non-adjacent countries: 8\%
+
+
+
+
+= Appendix =
+== CES review ==
+* Take the following CES utility function:
+\[
+u(x_1,x_2) = \left[x_1^\alpha+x_2^\alpha\right]^{1/\alpha},
+\]
+and define $\varepsilon=1/(1-\alpha)$, $\alpha=1-1/\varepsilon$
+* Maximize utility subject to prices $p_1$ and $p_2$:
+\[
+p_1x_1+p_2x_2 = E
+\]
+* What is the relative demand for $x_1$ and $x_2$?
+
+== Utility maximization ==
+* The marginal rate of substitution
+    \[
+    \frac{u_1}{u_2} = \frac{x_1^{\alpha-1}}{x_2^{\alpha-1}} = \left(\frac{x_1}{x_2}\right)^{-1/\varepsilon}
+    \]
+* In the optimum, this equals the relative price, $p_1/p_2$:
+\[
+\frac{x_1}{x_2} = \left(\frac{p_1}{p_2}\right)^{-\varepsilon}
+\]
+* The relative demand is loglinear in relative prices.
+    * The elasticity of substitution is constant at $\varepsilon$.
+
+== Cost minimization ==
+* In parallel, we can solve the cost minimization problem.
+* Minimize $E = p_1x_2+p_2x_2$ subject to $u(x_1,x_2)=u_0$.
+    * FOC:
+    \[
+    p_i = \lambda x_i^{\alpha-1}
+    \]
+\[
+E = u_0\left[p_1^{1-\varepsilon}+p_2^{1-\varepsilon}\right]^{1/(1-\varepsilon)}
+\]
+* The term
+\[
+P \equiv \left[p_1^{1-\varepsilon}+p_2^{1-\varepsilon}\right]^{1/(1-\varepsilon)}
+\]
+is the ''ideal price index''.
+
+
