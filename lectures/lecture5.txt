@@ -1,0 +1,79 @@
+% preamble.tex
+
+= Lecture 5: The Stolper-Samuelson Theorem of Winners and Losers =
+
+== Outline ==
+=== Today ===
+* Trade and factor rewards. Some factors gain, some factors lose from trade.
+  * The Stolper--Samuelson theorem.
+
+
+= Factor Prices and Input Choices =
+
+== ==
+\longfigure{Fig4A-1.png} {Choosing the Optimal Land-Labor Ratio}
+\longfigure{Fig4A-2.png} {Changing the Wage-Rental Ratio\\The ''Lerner'' Diagram}
+\longfigure{Fig4A-3.png} {Determining the Wage-Rental Ratio}
+% it can mentioned that FF and CC are determined by the optimal product combination, given by the PPF and the relative product prices
+
+\longfigure{Fig4A-4.png} {A Rise in the Price of Cloth}
+\longfigure {Fig4-6.png} {Factor Prices and Goods Prices}
+
+== Factor Prices, Output Prices, and Levels of Factors (cont.) ==
+* We have a relationship among input (factor) prices and output prices and the levels of factors used in production:
+* '''Stolper-Samuelson theorem''': if the relative price of a good increases, then the real wage or real lending/ renting rate of the factor used intensively in the production of that good increases, while the real wage or real lending/renting rate of the other factor decreases.
+    * Under competition, the real wage/rate is equal to the marginal productivity of the factor.
+    * The marginal productivity of a factor typically decreases as the level of that factor used in production increases.
+
+== ==
+\longfigure {Fig4-7.png} {From Goods Prices to Input Choices}
+
+== Factor Prices, Output Prices, and Levels of Factors (cont.) ==
+* We have a theory that predicts changes in the distribution of income when the relative price of goods changes, say because of trade.
+* An increase in the relative price of cloth, $P_C /P_F$, is predicted to:
+    * raise income of workers relative to that of landowners, $w/r$.
+        * because of cloth sector using labor more intensively
+    * raise the ratio of land to labor services, $T/L$, used in both industries, as land becomes relatively cheaper
+    * raise the marginal productivity of labor in both industries and lower the marginal productivity of land in both industries, as more land and less labor is used
+    * raise the real income of workers and \textit{lower the real income of land owners}.
+% could give some intuition, why (real income in terms of both goods?)
+
+== Factor Prices, Output Prices, Levels of Factors, and Levels of Output ==
+* An economy with a \textit{high ratio of land to labor services} is predicted to have a \textit{high output of food} relative to cloth and a \textit{low price of food} relative to cloth.
+    * It will be relatively efficient at (have a comparative advantage in) producing food.
+* An economy is predicted to be relatively efficient at producing goods that are intensive in the factors of production in which the country is relatively well endowed.
+* (These we will show later.)
+
+
+
+== Opening up to trade ==
+* If a land abundant country opens up to trade, this
+ * raises the relative price of food to cloth,
+ * raises the relative reward of land to labor.
+...
+* ''Abundant factors gain from opening to trade''.
+
+== Summary ==
+* There are ''always'' distributional effects of trade between
+  * different factors (Heckscher--Ohlin model)
+  * later: different industries (specific factor model)
+  * later: different firms (Melitz model)
+* These may lead to inequality,
+* and provide a political-economoy motivation for trade protection.
+
+
+
+
+= Additional Chapter Art =
+
+== ==
+\longfigure{Fig4-15.png} {Input Possibilities in Food Production}
+\widefigure{Table4-4.png} {Comparative International Wage Rates (United States = 100)}
+\widefigure{Fig4-16.png} {Skill Intensity and the Pattern of U.S. Imports from Two Countries}
+\widefigure{Fig4-17.png} {Changing Patterns of Comparative Advantage}
+\widefigure{Fig4-18.png} {Changing Patterns of Comparative Advantage (continued)}
+\widefigure{Table4-5.png} {Estimated Technological Efficiency, 1983 (United States = 1)}
+\longfigure{Fig4A-1.png} {Choosing the Optimal Land-Labor Ratio}
+\longfigure{Fig4A-2.png} {Changing the Wage-Rental Ratio}
+\longfigure{Fig4A-3.png} {Determining the Wage-Rental Ratio}
+\longfigure{Fig4A-4.png} {A Rise in the Price of Cloth}
