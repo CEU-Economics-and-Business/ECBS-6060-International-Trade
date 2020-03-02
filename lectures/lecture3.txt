@@ -53,14 +53,14 @@
 \]
 * The export of good $i$ from country $j$ to country $k$:
 \[
- x_i^{j\to k} = \frac{E^j}{E^w}x_i^j.
+ x_i^{j\to k} = \frac{E^k}{E^w}x_i^j.
 \]
 
 == The volume of trade ==
 * First we multiply by $p_i$ to get the value of the trade flow.
 * Let us add up all the goods that country $j$ produces:
 \[
-T^{j\to k} = \sum_i p_i x_i^{j\to k} = \frac{E^j}{E^w}\sum_ip_ix_i^j = \frac{E^jE^k}{E^w}.
+T^{j\to k} = \sum_i p_i x_i^{j\to k} = \frac{E^k}{E^w}\sum_ip_ix_i^j = \frac{E^jE^k}{E^w}.
 \]
 * This is exactly the gravity equation.
 
