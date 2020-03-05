@@ -1,0 +1,86 @@
+% ./preamble.tex
+
+= Comparative statics of the Heckscher-Ohlin model =
+== The Rybczynski theorem ==
+* Let us conduct some comparative statics.
+* Suppose we are inside the FPE set, and we increase one factor, while holding the others fixed.
+* If factor prices are fixed, what gives?
+* This exercise gives us the Rybczynski theorem.
+
+== Two goods ==
+=== The Rybczynski theorem ===
+If we increase the abundance of one factor, the sector that uses it intensively will expand ''more than proportionally'', the other will ''shrink''.
+
+== ==
+\longfigure{feenstra1-8}{}
+\longfigure{feenstra1-9}{The Rybczynski theorem}
+% figure 1.9 from Feenstra here
+
+== Multiple goods ==
+* Let us increase $V_1$ by $\delta>0$. The other factors remain unchanged.
+* As long as we remain inside the FPE set,
+\[
+\sum_i a_{ni}(w) \Delta x_i = \Delta V_n.
+\]
+* But $\Delta V_n=\delta>0$ for $n=1$ and $0$ otherwise.
+* The vector of $\Delta X_i$ has to be such that this holds.
+* Notice that $\Delta V_n$ is a weighted sum of the $\Delta X_i$s, with different (but positive) weights for each $n$.
+* We show that ''some'' industry expands ($\Delta X_i>0$) and ''some'' industry shrinks ($\Delta X_j<0$).
+
+== Proof ==
+* Prove by contradiction. We rule out
+  1. $\Delta X_i=0$ for all $i$,
+  1. $\Delta X_i\ge0$ for all $i$,
+  2. and $\Delta X_i\le0$ for all $i$.
+* Then it must be the case that $\Delta X_i>0$ for some $i$ and $\Delta X_j<0$ for some $j$.
+
+== Proof ==
+1. If $\Delta X_i\equiv 0$, then $\Delta V_n\equiv 0$, and we cannot have $\Delta V_1=\delta>0$.
+2. If $\Delta X_i\ge 0$ and $\Delta X_i\neq 0$, then there has to be some (maybe more) $i$ for which $\Delta X_i>0$. But then demand for all factors used in these industries increases:
+\[
+ \Delta V_n>0\text{ for all $n$ such that }a_{ni}>0.
+\]
+We cannot have $\Delta V_n=0$ for all $n>1$.
+3. The same argument can be used for $\Delta X_i\le 0$.
+
+== Intuition ==
+* If one factor expands, so will some of the sectors.
+* These sectors put extra demand on the rest of the factors.
+* To counteract the increasing factor demand, some sectors will shrink to restore the equilibrium.
+* (Given that the other sectors have shrunk, the expanding sector can expand even more.)
+* How is this different from the closed economy case?
+
+== Closed economy ==
+* It was key to the proof that $a_{ni}$s do not change.
+* In a closed economy, these will respond, too.
+* If a factor increases, its reward will typically fall.
+* Then each sector will change its ''technique'' to use it more intensively, thus absorbing more of it.
+
+== Illustration: an extreme case ==
+* Suppose that preferences are Leontief so that $\alpha$ does not depend on $p$.
+* In closed economy, $\mathbf X^j = \mathbf \alpha Y^j$, so the structure of production is also ''fixed'' in equilibrium.
+* Factor market clearing,
+\[
+\sum_i a_{ni}(w^j) x_i^j = V_n^j
+\]
+can only happen through changes in $a_{ni}$.
+
+== An empirical illustration: The  Mariel boatlift ==
+* David Card, 1990. The Impact of the Mariel Boatlift on the Miami Labor Market. ILRR.
+* From May to September 1980, some 125,000 were permitted to leave Cuba. Most ended up in Miami.
+* This inflow of immigrants represented a 7\% increase in the Miami labor force.
+...
+* Still, wages and unemployment rates hardly changed. Why?
+
+= Without FPE =
+== Without FPE ==
+* What if the endowment vector is outside the FPE set?
+* Clearly, factor rewards will be unequal.
+* Countries will use different techniques, and we cannot use the methods above to talk about the pattern of trade.
+
+==  ==
+\longfigure{lernerdiag}{The Lerner diagram}
+
+= The Stolper--Samuelson Theorem =
+
+
