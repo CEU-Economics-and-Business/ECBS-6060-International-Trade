@@ -1,0 +1,348 @@
+% preamble.tex
+
+= Lecture 8: The Ricardian model =
+
+
+= A simple example =
+== A simple example ==
+* Germany and Greece produce olive oils and steam turbines.
+* Both are only produced using labor.
+* Labor requirements:
+\begin{center}
+\begin{tabular}{lcc}
+& Germany & Greece\\
+\hline
+Olive oil & 10 minutes & 30 minutes\\
+Steam turbines & 10 hours & 100 hours\\
+\hline
+\end{tabular}
+\end{center}
+
+== A simple example ==
+1. Calculate the autarky prices.
+2. What is the pattern of trade?
+3. What can you say about the equilibrium prices?
+4. Why doesn't Germany produce both goods?
+4. What can you say about the equilibrium relative wage?
+
+= General setup =
+== General setup ==
+* There is one factor of production, say, labor $L$.
+* $I$ goods, each produced with CRS technology:
+\[
+c_i^j(w^j,x_i^j) = w^j a_i^j x_i^j.
+\]
+* Unit labor requirement $a_i^j$ differs across sectors ''and countries''.
+
+== Autarky equilibrium ==
+* Because we will want to evoke the Law of Comparative Advantage, we study the autarky equilibrium first.
+* Relative prices equal the marginal rates of transformation.
+* With linear technology, MRT equals relative productivities.
+* (I drop country superscript $j$, but ''everything'' is country specific.)
+
+== Equilibrium conditions ==
+* Profit maximization:
+\[
+w^{a}a_i \ge p^{a}_i
+\]
+with equality if $x_i^a>0$.
+* Labor market clearing:
+\[
+\sum_{i\in I} a_ix_i^a = L
+\]
+\[
+a\mathbf x^a = L
+\]
+* Utility maximization and goods market clearing:
+\[
+x_i^a = e_i(p^a,u).
+\]
+
+== The supply side ==
+* In autarky, all goods are produced.
+* Hence
+\[
+p_i^a = w^aa_i
+\]
+for all $i$.
+* Relative prices are pinned down by the supply side alone:
+\[
+\frac{p_i^a}{p_j^a} = \frac{a_i}{a_j}.
+\]
+* (This is no longer true in the open economy. Why?)
+
+= Pattern of trade =
+== The law of comparative advantage ==
+* The law of comparative advantage says that the autarky value of the net import vector is positive:
+\[
+\sum_{i}p_i^am_i>0.
+\]
+* Substituting in, and dividing by autarky wages:
+\[
+\sum_{i}a_im_i>0.
+\]
+* This looks very much like ''absolute advantage''. Why is still about CA?
+
+== The law of comparative advantage ==
+* Divide by $a_1$:
+\[
+\sum_{i}\frac{a_i}{a_1}m_i>0.
+\]
+
+== Integrated equilibrium ==
+* In the integrated equilibrium, not all products will be produced.
+* In fact, all products are only produced in one country. Why?
+* Let us consider a small open economy first, facing world prices $p^w$.
+
+== Balanced trade ==
+* Balanced trade implies
+\[
+\sum_{i}p^w_im_i=0.
+\]
+* Clearly, some goods are exported (in net terms), some are imported.
+* Divide by $p^w_1$:
+\[
+\sum_{i}\frac{p^w_i}{p^w_1}m_i=0.
+\]
+
+== Comparative advantage ==
+* Subtract the balanced trade equation from the LOCA:
+\[
+\sum_{i}\left(\frac{a_i}{a_1}-\frac{p^w_i}{p^w_1}\right)m_i>0.
+\]
+* If balanced trade holds together with the LOCA, then ''on average'' $a_i/p^w_i$ tends to be high for imported goods, and low for exported goods.
+* In this sense it is ''relative'' productivity that matters.
+
+
+= Pattern of production =
+== Specialization in the small open economy ==
+* Suppose the wage rate is $w$. What products do we produce at this wage rate?
+* Profit maximization:
+\[
+p_i^w \le w a_i
+\]
+with equality if $x_i>0$.
+...
+* This gives $I$ inequalities.
+* There is only one unknown, $w$.
+...
+* Only one good will be produced.
+
+== Specialization in the small open economy ==
+* Sort goods by $p_i^w/a_i$:
+\[
+\frac{p_1^w}{a_1} >\frac{p_2^w}{a_2}>...>\frac{p_I^w}{a_I}
+\]
+* These are all $\le w$:
+\[
+w \ge \frac{p_1^w}{a_1} >\frac{p_2^w}{a_2}>...>\frac{p_I^w}{a_I}
+\]
+* Clearly, only good $1$ (the one with the lowest autarky relative price) will be produced and
+\[
+w = \frac{p_1^w}{a_1}.
+\]
+
+
+== Specialization in the 2-country case ==
+* Good $i$ has unit labor requirement $a_i^1$ in country 1, and $a_i^2$ in country 2.
+* Profit maximization in both countries requires
+\begin{align*}
+ p_i^w  & \le w^1a_i^1,\\
+ p_i^w  & \le w^2a_i^2,
+\end{align*}
+with equality if there is production.
+* If country 1 produces good $i$,
+\[
+ p_i^w  = w^1a_i^1.
+\] 
+* Then country 2 does not produce the good iff
+\[
+w^1a_i^1   < w^2a_i^2,
+\]
+or 
+\[
+\frac{a_i^2}{a_i^1}   > \frac{w^1}{w^2}.
+\]
+
+== Specialization in the 2-country case ==
+* Country 1 produces all the goods in which it has a ''comparative advantage'' relative to wages.
+\[
+\frac{a_i^2}{a_i^1}   > \frac{w^1}{w^2}.
+\]
+* Country 2 produces all the goods for which the opposite holds
+\[
+\frac{a_i^2}{a_i^1}   < \frac{w^1}{w^2}.
+\]
+
+
+
+= The 2-good case =
+== The 2-good case ==
+* If there are only two goods, the case is simpler.
+* In general,
+\[
+\frac{p_1^w}{p_2^w} \neq \frac{a_1}{a_2},
+\]
+so the conditions cannot hold both with equality.
+* Only one of the two goods will be produced. Let it be good 1.
+
+== Integrated equilibrium ==
+* Profit maximization:
+\begin{align*}
+p_1^w &= wa_1\\
+p_2^w &< wa_2\\
+\end{align*}
+* The first equation pins down the wage rate.
+* The second inequality holds if
+\[
+\frac{a_1}{a_2}<\frac{p_1^w}{p_2^w}.
+\]
+* The country produces the good in which it has a ''comparative advantage''.
+
+
+== Continuum of goods ==
+* The Ricardian model can be generalized to a continuum of goods (Dornbusch, Fischer and Samuelson, 1977, AER).
+* There are two countries, so world prices will also be endogenized.
+
+== Tastes ==
+* There is a continuum of goods, indexed by $z\in[0,1]$.
+* The consumption basket is a function $c(z):[0,1]\to \mathbb{R}$.
+* Consumers have Cobb-Douglas utility over them:
+\[
+u[c(\cdot)] = \exp[\int_0^1 \ln c(z) dz]. 
+\]
+* What is the corresponding expenditure function?
+...
+\[
+\min_{c(\cdot)} \int_0^1 p(z)c(z) \text{ s.t. } \exp[\int_0^1 \ln c(z) dz]\ge u.
+\]
+
+== Consumer demand ==
+* Each good receives a constant fraction of expenditure:
+\[
+p(z)c(z) = \lambda.
+\]
+* So if aggregate expenditure is $E$,
+\[
+E = \int_0^1 p(z)c(z)dz = \int_0^1 \lambda dz,
+\]
+so is good-by-good expenditure:
+\[
+p(z)c(z) = E.
+\]
+
+
+
+== Technology ==
+* Good $z$ is produced with unit labor requirements $a^1(z)$ and $a^2(z)$.
+* Let us order goods such that 
+\[
+A(z) = \frac{a^2(z)}{a^1(z)}
+\]
+is ''decreasing''.
+    * A higher $z$ means higher ''comparative advantage'' of that good in country 1.
+    
+== Patterns of specialization with given wages ==
+* Suppose wages are $w^1$ and $w^2$. What is the pattern of specialization?
+* The law of one price prevails for each good, $p^1(z)=p^2(z)=p(z)$.
+* Clearly, $w^1a^1(z) = p(z) = w^2a^2(z)$ cannot hold for both countries, except for one particular good. 
+    * This is where continuum comes handy.
+* Goods with 
+\[
+A(z) = \frac{a^2(z)}{a^1(z)} > \frac{w^1}{w^2}
+\]
+have lower autarky prices in country 1, and are produced there.
+* These goods are in $[0,\tilde z]$. The rest, $(\tilde z,1]$ is produced in country 2.
+
+== ==
+\longfigure{OR4-8}{Determining the pattern of specialization}
+
+
+== Trading equilibrium ==
+* Of course, $w^1/w^2$ is endogenous.
+* We close the model with the demand side.
+* Aggregate expenditure:
+\[
+\int_0^1 p(z)[c^1(z)+c^2(z)]dz = \int_0^1 p(z)x^j(z)dz = w^1L^1+ w^2L^2.
+\]
+* Each good receives the same expenditure,
+\[
+p(z)c(z) = \lambda.
+\]
+
+== Market clearing ==
+* If the first $\tilde z$ goods are produced in country 1,
+then country 1's revenue is
+\[
+\int_0^{\tilde z}p(z)x^1(z) dz = \int_0^{\tilde z}p(z)c(z) = \tilde z(w^1L^1 +w^2L^2).
+\]
+* Because of zero profits, revenue is the same as wage costs,
+\[
+\tilde z(w^1L^1 +w^2L^2) = w^1 L^1.
+\]
+* We can express the relative wage as
+\[
+\frac{w^1}{w^2}= B(\tilde z)\equiv \frac{\tilde z}{1-\tilde z}\frac{L^2}{L^1}
+\].
+* To find the equilibrium we solve for $\tilde z$ and $w^1/w^2$ ''jointly''.
+    * Why not $w^1$ and $w^2$?
+    * Can you verify that this is an equilibrium?
+== ==
+\longfigure{OR4-9}{Joint determination of wages and specialization}
+
+% discrete number of goods
+
+== Comparative statics ==
+* We can conduct simple comparative statics.
+* Bigger and more productive countries produce a wider range of goods.
+
+== ==
+\longfigure{OR4-10}{A rise in country 2's labor supply}
+
+== Trade costs ==
+* Suppose there are trade costs involved in crossing the border.
+* You have to send $\tau>1$ goods so that 1 unit arrives.
+    * Samuelson's (1954) iceberg formulation.
+* How does this change the pattern of specialization?
+    * Some goods are produced in both countries and are not traded.
+    * More on this later in the course.
+
+== Trade costs and specialization ==
+* Good $z$ is only shipped from country 1 to 2 if
+\[
+A(z)>\frac{\tau w^1}{w^2}.
+\]
+* Good $z$ is only shipped from country 2 to 2 if
+\[
+A(z)<\frac{w^1}{\tau w^2}.
+\]
+* For $\tau>1$, there is a range of $z$s for which neither inequality holds.
+* The flatter the $A(z)$, the wider this range.
+
+== ==
+\longfigure{OR4-11}{Specialization with transport costs}
+\longfigure{OR4-12}{Some goods are not traded}
+
+
+
+
+= Appendix =
+== Aside: Cardinality of the continuum ==
+* The ''cardinality'' of a set is a measure of the "number of elements" in it.
+    * $|A|=|B|$ if there is a bijection between the elements of $A$ and $B$.
+    * $|A|>|B|$ if $|a|=|B|$ for a proper subset $a\subset A$, but not $|A|=|B|$.
+* ''Continuum'' is the cardinality of the real line.
+    * $|\mathbb R|=|[0,1]| = |\mathbb R^2|$
+    * $|\mathbb R|>|\mathbb N|$
+* The cardinality of the continuum is ''infinite''. What does this mean?
+
+== Why continuum? ==
+* The two-good model implies sever restrictions.
+    * Many results change if we add more goods.
+* It is often easier to work with a continuum of goods than with 3 or $N$ goods.
+    * Especially when working with inequalities. 
+    * Or when things are random. Why?
+* In many cases, we can simply think of the continuum case as $N\to\infty$.
+* But often our intuition breaks down, and special techniques are needed.
+    * differentiation
+    * double continuums
