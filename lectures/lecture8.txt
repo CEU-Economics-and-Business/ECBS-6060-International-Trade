@@ -200,6 +200,7 @@ p_2^w &< wa_2\\
 * The country produces the good in which it has a ''comparative advantage''.
 
 
+= Continuum of goods =
 == Continuum of goods ==
 * The Ricardian model can be generalized to a continuum of goods (Dornbusch, Fischer and Samuelson, 1977, AER).
 * There are two countries, so world prices will also be endogenized.
