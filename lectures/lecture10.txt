@@ -1,0 +1,412 @@
+% ./preamble.tex
+
+= Lecture 10: Productivity (and trade) =
+== Outline ==
+1. Facts: productivity differs widely across firms.
+2. Why is one firm more productive than the other?
+3. Why are best firms not copied?
+4. Why do bad firms survive?
+5. What does heterogeneity mean for aggregate productivity?
+
+= Facts =
+== Facts ==
+1. Productivity differs widely even within narrow industries.
+2. Productivity is correlated with trading status (exporters and importers are special).
+
+== Within-sector firm dispersion ==
+* Some facts from Hungarian manufacturing data. (Also true in other countries, see Syverson, 2011.)
+* Within 4-digit industries,
+    * Firms in the 90th percentile are about 9 times as big as firms in the 10th percentile.
+    * They are about 2 times as productive.
+    * Size and productivity are positively correlated (0.25).
+
+== ==
+\longfigure{size-dispersion}{Firm size varies hugely}
+\longfigure{TFP-dispersion}{Productivity is also much dispersed}
+\longfigure{size-TFP-scatter}{Bigger firms are more productive}
+
+
+
+== Exporter facts ==
+(Based on Bernard, Jensen and Schott, 2007:)
+
+=== Exporters are few.===
+In the U.S., only 18\% of manufacturing firms export.
+
+=== Exporters are special. ===
+They sell 4.4 times as much as non-exporters. They are also more productive, pay higher wages etc.
+
+== ==
+\longfigure{eshare}{Exporters are few (Mayer and Ottaviano, 2008)}
+\longfigure{epremia}{Exporters are special (Mayer and Ottaviano, 2008)}
+
+\longfigure{size-exporter}{Firm size predicts export status}
+\longfigure{TFP-exporter}{TFP predicts export status}
+
+
+
+
+= What determines productivity? =
+== What is productivity? ==
+Productivity is the efficiency with which inputs are converted into output.
+
+== How to measure it? ==
+* Conceptually, take two firms with the same input usage and calculate their relative output: relative productivity.
+* Difficult, because no two firms have the exact same input bundle: need some structure.
+* Production function approach.
+* Nonparametric approach: data envelopment analysis.
+
+== Production function ==
+* Assume a parametric relationship between inputs, output and a ''single index'' of productivity, e.g.
+\[
+Y_i = F_i(K_i,L_i) =
+F(A_i, K_i, L_i) = A_iK_i^\alpha L_i^{1-\alpha}
+\]
+* Then total factor productivity is
+\[
+A_i = \frac{Y_i}{K_i^\alpha L_i^{1-\alpha}}.
+\]
+* More generally, how to combine multiple inputs into a single bundle?
+* Assume away: heterogeneity in functional form, factor-augmenting productivity (but see later).
+
+
+== What determines productivity? ==
+* Productivity is the measure of our ignorance.
+* Proximate causes of productivity:
+	* mismeasured inputs (e.g., better workers)
+	* unmeasured inputs (e.g., better managers)
+	* organization of production (e.g., better allocation of workers to machines)
+* Two reminders:
+    1. Once we have an explanation, it is no longer ``productivity."
+    2. Be very specific about measurement.
+
+== An unmeasured input ==
+* Suppose no heterogeneity in technology,
+\[
+Y_i = K_i^\alpha L_i^{1-\alpha}.
+\]
+* But we do not observe $K_i$ and $K_i^\alpha$ acts as a productivity shifter.
+* Moreover, it will be correlated with $L_i$.
+* In frictionless input markets with $r$ and $w$,
+\[
+\frac {K_i}{L_i} =
+\frac {\alpha}{1-\alpha}
+\frac {w}{r} = k,
+\]
+and
+\[
+Y_i = k^\alpha L_i.
+\]
+
+== Uncomparable inputs ==
+* Suppose production uses different variaties of widgets, each costing $p_k=1$.
+\[
+Y_i = \left(
+\sum_{k=1}^{n_i} X_k^{1-1/\theta}
+\right)^{\theta/(\theta-1)}
+\]
+* Different firms use different inputs, $\{1,2,...,n_i\}$. How to compare their productivity?
+* Use cost function,
+\[
+C_i(Y_i) = Y_i 
+\left(
+\sum_{k=1}^{n_i} p_k^{1-\theta}
+\right)^{1/(1-\theta)} = Y_i n_i^{-1/(\theta-1)}.
+\]
+* Firms with more varieties have lower unit cost: more productive.
+
+
+== Organization of production ==
+* Suppose two machines $K_1$ and $K_2$ and Cobb--Douglas production function $Y_i = K_i^\alpha L_i^{1-\alpha}$.
+* Share $s_1$ of $L$ workers work on machine 1. Overall output
+\[
+Y = K_1^\alpha (s_1L)^{1-\alpha} + K_2^\alpha [(1-s_1)L]^{1-\alpha}
+\]
+\[
+=
+[k_1^\alpha s_1^{1-\alpha} + (1-k_1)^\alpha (1-s_1)^{1-\alpha}]
+K^{\alpha}L^{1-\alpha}
+\]
+* Correlation between $s_1$ and $k_1$ determines productivity.
+
+= Estimation =
+== Estimating productivity ==
+* Choice of production function and inputs (data constraints).
+    * gross output or value added
+    * quality adjustments
+    * physical capital
+* Multiproduct firms?
+* Measurement: values or quantities? Often only $P_iY_i$ is available.
+* Estimating the parameters of the production function: biases from endogenous input choice and endogenous survival. 
+...
+* Good news: particulars of estimation often do not matter much (Van Biesebroeck, 2008).
+
+== Revenue vs quantity productivity ==
+* Revenue productivity: the ability to produce \$ with given amount of inputs,
+\[
+\text{TFPR}_i = P_iA_i.
+\]
+* Complication: depends on demand side, not just technology.
+* Foster, Haltiwanger and Syverson (2008) measure $P_i$ and $A_i$ in a sample of narrow, homogeneous-good industries. 
+    * Prices are negatively correlated with productivity. 
+    * TFPR is less dispersed than $A$.
+    * In fact, with constant markups, there should be ''no variation'' in TFPR.
+* Athalay (2012) also measures input prices.
+
+== Evidence on sources of productivity ==
+* Better measurement of inputs helps but can only go so far.
+* Management matters: Bloom et al (2012) give management advice to Indian textile firms in a randomized controlled trial. Productivity goes up by 20\%.
+* Mel, McKenzi and Woodruff (2008) directly estimate the marginal return to capital in an RCT in Sri Lanka.
+
+
+== ==
+\longfigure{Bloom}{}
+\longfigure{Mel}{}
+
+
+
+
+= The canonical industry models =
+== The canonical industry models ==
+* How is productivity dispersion sustained in equilibrium?
+	1. Why are best firms not copied?
+	2. Why do bad firms survive?
+* Two models of industry equilibrium:
+	* '''Lucas (1978)''', Jovanovic (1982), Hopenhayn (1992), Atkeson and Kehoe (2005)
+	* '''Melitz (2003)'''
+
+== The canonical industry models ==
+=== Lucas (1978) ===
+% 2000 citations
+1. Knowledge embodied in managers.
+2. ``Span of control" leads to diminishing return to scale.
+
+=== Melitz (2003) ===
+% 4600 citations
+1. Disembodied knowledge 
+    * protected by patents,
+    * random in quality.
+2. Product differentiation leads to downward sloping demand.
+
+= The Lucas model =
+== The Lucas model ==
+(Atkeson-Kehoe version)
+\[
+Y_i = A_i^{1-\nu}L_i^\nu
+\]
+ * $A_i$: organizational capital, managerial talent.
+ * $L_i$: employees hired in frictionless markets
+
+== Allocation of resources ==
+\[
+\max_{L_i} pA_i^{1-\nu}L_i^\nu - w L_i
+\]
+* Assume prices $p$ and wahes $w$ are the same across firms.
+* First-order condition
+\[
+p\nu \left(
+\frac {A_i}
+{L_i}
+\right)^{1-\nu} = w
+\]
+so that
+\[
+L_i = A_i(p\nu)^{1/(1-\nu)} w^{-1/(1-\nu)}.
+\]
+* More productive firms hire more workers.
+* But elasticity is less than infinite.
+
+== Profitability ==
+* Profits are a constant fraction of revenue,
+\[
+\pi_i = pY_i - wL_i = pY_i(1-\nu) = (1-\nu)A_i 
+p^{1/(1-\nu)}w^{-\nu/(1-\nu)}
+\]
+* These have to be greater than fixed cost $f$ to survive.
+
+
+= Melitz model =
+== Demand ==
+* Consumers have a CES demand structure:
+\[
+U=\left[ \int_{\Omega }\left( y\left( \omega \right) \right) ^{\rho
+}d\omega \right] ^{1/\rho }
+\]
+with $\rho\in(0,1)$. 
+    * elasticity of substitution: $\theta=1/(1-\rho)$
+    * set of varieties: $\Omega$ (continuum)
+* Demand for good $\omega$:
+\[
+q(\omega) = Q\left[\frac{p(\omega)}{P}\right]^{-\theta},
+\]
+where 
+\[
+ P=\left[ \int_{\Omega } p\left( \omega \right) 
+^{1-\theta }d\omega \right] ^{\frac{1}{1-\theta }}.
+\]
+
+
+== Technology ==
+* Each unit of good $\omega$ requires $1/\varphi(\omega)$ units of labor.
+* There is a fixed cost of production, $f$.
+\[
+l(\omega) = \frac{y(\omega)}{\varphi(\omega)} + f
+\]
+    * overhead costs of marketing, management, distribution etc.    
+
+== Allocation of resources ==
+* Revenue of firm $\omega$ is
+\[
+r(\omega) = R\left[\frac{p(\omega)}{P}\right]^{1-\theta} = R\frac{\varphi(\omega)^{\theta-1}}{\int_{\Omega }\varphi\left( \omega \right) 
+^{\theta-1}d\omega}
+\] 
+    * More productive firms have higher revenue.
+
+== Profits ==
+* A constant $1-\rho$ fraction of revenue is retained as ''operating'' profits:
+\[
+\pi(\omega) = (1-\rho)r(\omega)-f = (1-\rho)R\frac{\varphi(\omega)^{\theta-1}}{\int_{\Omega }\varphi\left( \omega \right) 
+^{\theta -1}d\omega} -f.
+\] 
+
+
+
+
+= Reallocation and aggregate productivity =
+
+== How does reallocation affect productivity? ==
+* The average labor productivity of an economy is
+\[
+ \frac{Y}{L} = \frac{\sum_i Y_i}{\sum_i L_i} = \sum_i s_i \varphi_i,
+\]
+    * $s_i=L_i/L$ is the employment share of firm $i$.
+    * $\varphi_i=Y_i/L_i$ is firm-specific labor productivity.
+* This can change if $\varphi_i$ changes or if $s_i$ changes.
+    * $\varphi_i$ changes if the firm upgrades its technology, management, operates at a better scale etc.
+    * $s_i$ changes if the firm expands or shrinks.
+
+== A decomposition ==
+* A change in aggregate productivity can be decomposed as
+\begin{multline}
+\frac{Y'}{L'}- \frac{Y}{L} = \sum_i s_i' \varphi_i'-\sum_i s_i \varphi_i \\
+    = \sum_i (s_i'-s_i) \varphi_i + \sum_is_i'(\varphi_i'-\varphi)\\
+    = \sum_i (s_i'-s_i) (\varphi_i-Y/L) + \sum_is_i'(\varphi_i'-\varphi)
+\end{multline}
+* The first term captures ''reallocation''.
+* It is positive if (on average)
+    * more productive firms expand: $(\varphi_i-Y/L)>0$, $(s_i'-s_i)>0$
+    * less productive firms shrink: $(\varphi_i-Y/L)<0$, $(s_i'-s_i)<0$
+    * or exit: $(\varphi_i-Y/L)<0$, $(0-s_i)<0$
+* To have nonzero (large) reallocation, we need some (large) productivity differences across firms.
+
+
+= Evidence on the role of allocation =
+== Evidence on the role of allocation ==
+Large effects from reallocation
+    * Pavcnik (2002) in Chile
+    * Brown and Earle (2008) in transition countries
+    * Hsieh and Klenow (2009) in China and India
+    * Melitz and Polanec (2012) in Slovenia
+
+= Appendix =
+
+== Consumers ==
+* Consumers value all products symmetrically.
+* Suppose $n$ products exist.
+* Utility:
+\[
+U = \left[\sum_{i=1}^{n}x_i^\alpha\right]^{1/\alpha}\text{ }0<\alpha<1
+\]
+* This is a [[constant-elasticity-of-substitution]] utility function a la Dixit and Stiglitz.
+* Elasticty of substitution is $\varepsilon=1/(1-\alpha)>1$.
+    * What does $\varepsilon>1$ mean?
+
+== Love of variety ==
+* Suppose each variety costs $p_i=p$.
+* Total spending on $n$ goods: $npx = E$, so that $x = E/(pn)$.
+* What utility does the consumer achieve?
+\[
+D = \left[\sum_{i=1}^{n}x^\alpha\right]^{1/\alpha} = \frac Ep \left[\sum_{i=1}^{n}n^{-\alpha}\right]^{1/\alpha} = \frac Ep n^{(1-\alpha)/\alpha}
+\]
+* For given income $E$ and prices $p$, utility increases in $n$.
+    * Because $x_i$s are imperfect substitutes of one another, it is better to have a little of each than much of one.
+    * Consumption of non-existent varieties is 0. The convexity of preferences dislikes zeros.
+    * This is the love-of-variety feature of preferences.
+
+== Love of variety ==
+* Alternatively, we can express love of variety in the ideal price index.
+* The minimum cost of obtaining one unit of utility,
+\[
+P = \left[\sum_{i=1}^{n}p^{1-\varepsilon}\right]^{1/(1-\varepsilon)} = p{n^{1/(1-\varepsilon)}}
+\]
+is decreasing in $n$.
+    * We can think of the price of non-existent varieties as $\infty$.
+    * When the product becomes available, its price falls from $\infty$ to $p$.
+    * An increase in $n$ then reduces the aggregate price index.
+* Hence indirect utility,
+\[
+u = \frac{E}{P} = \frac Ep n^{(1-\alpha)/\alpha}
+\]
+is increasing in $n$.
+
+
+== CES review ==
+* Take the following CES utility function:
+\[
+u(x_1,x_2) = \left[x_1^\alpha+x_2^\alpha\right]^{1/\alpha},
+\]
+and define $\varepsilon=1/(1-\alpha)$, $\alpha=1-1/\varepsilon$
+* Maximize utility subject to prices $p_1$ and $p_2$:
+\[
+p_1x_1+p_2x_2 = E
+\]
+* What is the relative demand for $x_1$ and $x_2$?
+
+== Utility maximization ==
+* The marginal rate of substitution
+    \[
+    \frac{u_1}{u_2} = \frac{x_1^{\alpha-1}}{x_2^{\alpha-1}} = \left(\frac{x_1}{x_2}\right)^{-1/\varepsilon}
+    \]
+* In the optimum, this equals the relative price, $p_1/p_2$:
+\[
+\frac{x_1}{x_2} = \left(\frac{p_1}{p_2}\right)^{-\varepsilon}
+\]
+* The relative demand is loglinear in relative prices.
+    * The elasticity of substitution is constant at $\varepsilon$.
+
+== Cost minimization ==
+* In parallel, we can solve the cost minimization problem.
+* Minimize $E = p_1x_2+p_2x_2$ subject to $u(x_1,x_2)=u_0$.
+    * FOC:
+    \[
+    p_i = \lambda x_i^{\alpha-1}
+    \]
+\[
+E = u_0\left[p_1^{1-\varepsilon}+p_2^{1-\varepsilon}\right]^{1/(1-\varepsilon)}
+\]
+* The term
+\[
+P \equiv \left[p_1^{1-\varepsilon}+p_2^{1-\varepsilon}\right]^{1/(1-\varepsilon)}
+\]
+is the ''ideal price index''.
+
+
+== Markup pricing ==
+* Take a demand function $D(p)$ and a cost function $C(Q)$.
+* Maximize profit
+\[
+pD(p) - C[D(p)]
+\]
+* First-order condition
+\[
+D(p) + pD'(p) - C'[D(p)]D'(p) = 0
+\]
+* Divide by $pD'$ and rearrange
+\[
+\frac{p-C'[D(p)]}{p} = \frac{D(p)}{-pD'(p)} \equiv \frac 1\varepsilon.
+\]
+* Price--cost markup
+\[
+\frac{p}{C'[D(p)]} = \frac{\varepsilon}{\varepsilon-1}.
+\]
+
