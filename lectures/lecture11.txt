@@ -1,0 +1,558 @@
+% ./preamble.tex
+
+= Lecture 12: The Melitz model =
+== The Melitz model ==
+* We first describe the equilibrium of a closed economy.
+* We then turn to the open economy.
+* We conduct two comparative statics:
+    * autarky vs open economy
+    * change in trade costs
+
+== The basics of the model ==
+* Firms differ in their productivity.
+* There are fixed costs of exporting.
+...
+* Such a model is ''qualitatively'' consistent with the two mentioned facts:
+    * Fixed costs prevent many firms from exporting.
+    * More productive firms are bigger, and bigger firms can recover the fixed cost more easily $\to$ they are more likely to export.
+
+% affine profit functions figure here
+
+== Strict sorting property ==
+* There is a ''strict sorting'' property:
+    * all firms below a cutoff are non-exporters
+    * all firms above that cutoff are exporters
+
+% If you spend some more time describing the logic in the Melitz model, you will naturally get to strict sorting.
+
+== Key implications ==
+In the event of a trade liberalization (falling trade costs),
+1. more firms will export ("extensive margin"),
+2. labor is reallocated from less productive non-exporters to more productive exporters,
+3. and least productive non-exporters will exit. 
+
+== Consumers ==
+* Consumers have a CES demand structure:
+\[
+U=\left[ \int_{\Omega }\left( y\left( \omega \right) \right) ^{\rho
+}d\omega \right] ^{1/\rho }
+\]
+with $\rho\in(0,1)$. 
+    * elasticity of substitution: $\theta=1/(1-\rho)$
+    * set of varieties: $\Omega$ (continuum)
+* Demand for good $\omega$:
+\[
+q(\omega) = Q\left[\frac{p(\omega)}{P}\right]^{-\theta},
+\]
+where 
+\[
+ P=\left[ \int_{\Omega } p\left( \omega \right) 
+^{1-\theta }d\omega \right] ^{\frac{1}{1-\theta }}.
+\]
+
+== Firms ==
+* There is a continuum of firms, indexed by $\omega\in \Omega$.
+* They produce differentiated products and compete monopolistically.
+* Firms differ in productivity $\varphi(\omega)$.
+
+== Technology ==
+* Each unit of good $\omega$ requires $1/\varphi(\omega)$ units of labor.
+* There is a fixed cost of production, $f$.
+\[
+l(\omega) = \frac{y(\omega)}{\varphi(\omega)} + f
+\]
+    * overhead costs of marketing, management, distribution etc.    
+
+== Pricing and demand ==
+* Because demand is isoelastic, firms charge a constant markup $1/\rho$,
+\[
+p(\omega) = \frac{w}{\rho \varphi(\omega)}.
+\]
+    * More productive firms have lower prices.
+* We normalize the wage rate to 1.
+* Revenue of firm $\omega$ is
+\[
+r(\omega) = R\left[\frac{p(\omega)}{P}\right]^{1-\theta} = R\frac{\varphi(\omega)^{\theta-1}}{\int_{\Omega }\varphi\left( \omega \right) 
+^{\theta-1}d\omega}
+\] 
+    * More productive firms have higher revenue.
+
+== Profits ==
+* A constant $1-\rho$ fraction of revenue is retained as ''operating'' profits:
+\[
+\pi(\omega) = (1-\rho)r(\omega)-f = (1-\rho)R\frac{\varphi(\omega)^{\theta-1}}{\int_{\Omega }\varphi\left( \omega \right) 
+^{\theta -1}d\omega} -f.
+\] 
+
+
+== Aggregation ==
+* The aggregate price index:
+\[
+ P=\left[ \int_{\Omega } p\left( \omega \right) 
+^{1-\theta }d\omega \right] ^{\frac{1}{1-\theta }}.
+\]
+* Substituting in $p(\omega) = 1/(\rho \varphi)$:
+\[
+ P=\frac{1}{\rho}\left[ \int_{\Omega } \varphi\left( \omega \right) 
+^{\theta-1}d\omega \right] ^{\frac{1}{1-\theta}}.
+\]
+* Since each firm is fully characterized by $\varphi$, let us do a change of variables:
+\[
+ P=\frac{1}{\rho}\left[ \int_{\Omega } \varphi^{\theta-1}M\mu(\varphi)d \varphi \right] ^{\frac{1}{1-\theta}}.
+\]
+    * $M$: number ("mass") of firms
+    * $\mu(\varphi)$: fraction of firms with productivity $\varphi$
+
+
+
+== Average productivity ==
+* Introduce a ''geometric average'' of productivities,
+\[
+ \tilde\varphi=\left[ \int_{\Omega } \varphi^{\theta-1}\mu(\varphi)d \varphi \right] ^{\frac{1}{\theta-1}}.
+\]
+* Clearly,
+\[
+ P = \frac{1}{\rho\tilde \varphi}M^{1/(1-\theta)} .
+\]
+* In fact, $\tilde \varphi$ completely summarizes the productivity distribution of firms.
+* All aggregate variables are as if the economy were populated by 
+    * $M$ ''identical'' firms
+    * with productivity $\tilde\varphi$
+
+
+== Average profits ==
+* Recall
+\[
+\pi(\tilde\varphi) = (1-\rho)r(\tilde\varphi)-f.
+\]
+* Aggregate revenue is $R$:
+\[
+ R = Mr(\tilde\varphi) .
+\]
+* So the profit of the average firm is
+\[
+\pi(\tilde\varphi) = \frac{(1-\rho)R}{M}-f.
+\]
+
+
+
+== Firm-level variables ==
+* Firm-level variables depend on $\varphi/\tilde\varphi$.
+* Revenue of firm $\varphi$ is
+\[
+r(\varphi) = r(\tilde\varphi)\left(\frac{\varphi}{\tilde\varphi}\right)^{\theta-1}
+\] 
+* Profits:
+\[
+\pi(\varphi) = (1-\rho)r(\tilde\varphi)\left(\frac{\varphi}{\tilde\varphi}\right)^{\theta-1} - f
+\] 
+* All else equal, if the average firm (the competition) is better, firm $i$ makes less revenue and less profits.
+
+
+== Firm entry ==
+* Before entering, the firm doesn't know its true productivity. (Otherwise only the best firms would enter.)
+* (Everything we say about productivity can be understood as "product appeal". Why?)
+* They pay a fixed cost, $f_e$.
+    * setting up a plant
+    * hiring workers
+    * producing the first prototype
+* After entry, they draw a productivity from a continuous distribution $G(\varphi)$.
+* Clearly, if $\pi(\varphi)<0$ (remember the overhead costs), the firm exits right away.
+
+== Zero-profit cutoff ==
+* There exists a cutoff probability below which firms make negative profit:
+\[
+ \varphi^*:  \frac{(1-\rho)R}{M}\left(\frac{\varphi^*}{\tilde\varphi}\right)^{\theta-1} - f =0
+\]
+* This clearly depends on average productivity, $\tilde\varphi$.
+    * Higher $\tilde\varphi$ reduces the profit of each firm.
+    * Even more productive firms cannot recover their fixed cost.
+    * $\varphi^*$ rises.
+
+== Average productivity ==
+* Average productivity depends on the distribution of firms.
+* Firms below $\varphi^*$ exit right away, $\mu(\varphi)=0$ for all $\varphi<\varphi^*$.
+* Firms above $\varphi^*$ are drawn from a ''truncated distribution'':
+\[
+ \mu(\varphi) = \frac{g(\varphi)}{1-G(\varphi^*)}
+\]
+* Substitute into average productivity:
+\[
+ \tilde\varphi=\left[ \int_{\Omega } \varphi^{\theta-1}\mu(\varphi)d \varphi \right] ^{\frac{1}{\theta-1}}.
+\]
+
+== Expected profit ==
+* The expected profit of a new entrant is
+\[
+ G(\varphi^*)\cdot 0 + (1-G(\varphi^*))\cdot \pi(\tilde\varphi).
+\]
+* If there is free entry, this should equal the entry cost:
+\[
+ (1-G(\varphi^*))\pi(\tilde\varphi) = f_e.
+\]
+\[
+ (1-G(\varphi^*))\left[\frac{(1-\rho)R}{M}-f\right]= f_e.
+\]
+
+
+== Equilibrium ==
+* In equlibrium, both the zero-profit-cutoff and the free-entry conditions hold.
+* We also have labor market clearing.
+* Because ''in expectation'' firms make zero profit,
+\[
+ L = R.
+\]
+* This pins down the ''number of firms'', $M$.
+
+
+==  ==
+\widefigure{melitz1}{Equilibrium production cutoff}
+
+
+== Pareto example ==
+* Suppose the distribution of firms is Pareto:
+\[
+G(\varphi) = 1-\left(\frac{\varphi}{\varphi_\min}\right)^{-k}.
+\]
+* Then $\varphi^{\theta-1}$ is also pareto with exponent $K=k/(\theta-1)$.
+* The Pareto distribution has a simple truncated mean
+\[
+\tilde\varphi^{\theta-1} = \frac{K}{K-1}\varphi_*^{\theta-1}
+\]
+* This simplifies many of the formulas.
+
+
+== Pareto example ==
+* Zero-profit cutoff:
+\[
+ \frac{(1-\rho)R}{M}\frac{K-1}{K} - f =0,
+\]
+so that
+\[
+ \frac{(1-\rho)R}{M} =\frac{K}{K-1} f.
+\]
+* Free entry:
+\[
+ \left(\frac{\varphi^*}{\varphi_\min}\right)^{-k}\left[\frac{(1-\rho)R}{M}-f\right]
+\]
+\[
+= \left(\frac{\varphi^*}{\varphi_\min}\right)^{-k}\frac{1}{K-1} f= f_e.
+\]
+
+
+
+= The open economy =
+== The open economy ==
+* We take a small open economy with trade costs $\tau$.
+* (We would have similar conclusions with GE of large economies.)
+* Opening up to trade basically amounts to increasing the size of the market.
+
+== Foreign demand ==
+* Foreign demand is a similarly isoelastic,
+\[
+q_x(\varphi)=A p_x(\varphi)^{-\theta}.
+\]
+* Because we are in a small open economy, we treat $A$ as a ''constant'' demand shifter.
+* (It would move around in GE.)
+
+
+== Exports vs domestic sales ==
+* Exporting has a marginal, "iceberg" cost $\tau>1$.
+    * This includes tariffs as well as transportation costs.
+* We can conduct comparative statics wrt $\tau$.
+
+== Export pricing ==
+* Foreigners have to pay the shipping cost,
+\[
+p_x(\varphi) = \frac{\tau}{\rho \varphi},
+\]
+(again, wage is normalized to 1).
+* Foreign price depends on $\tau$.
+
+
+== Revenues ==
+* Foreign revenues are
+\begin{align*}
+r_x(\varphi) &=  A \rho^{\theta-1} \tau^{-\theta}\varphi^{\theta-1}
+\end{align*}
+    * More productive firms are bigger both at home and abroad.
+    * Foreign revenue decreases in $\tau$.
+* Total revenue of an exporter:
+\[
+r(\varphi) = r_x(\varphi)+r_d(\varphi) = 
+\varphi^{\theta-1}\left[A \rho^{\theta-1} \tau^{-\theta} + \frac{R_d}{M}\tilde\varphi^{1-\theta}\right]
+\]
+    * Total revenue is proportional to $\varphi^{\theta-1}$, just like before.
+    * In fact, export / domestic sales is constant across all exporters.
+
+== The decision to export ==
+* To send any positive exports, a firm also has to pay a fixed cost $f_x$.
+    * setting up distribution networks
+    * conforming to regulation
+    * catering to foreign tastes
+* This can deter some firms from exporting.
+* To proceed step by step, we first assume $f_x=0$ so that everybody exports.
+
+
+
+
+
+= Everybody exports =
+
+
+== Profits ==
+* Recall that operating profits are $(1-\rho)$ fraction of revenue:
+\[
+\pi(\varphi) = (1-\rho)r(\varphi) = (1-\rho)\varphi^{\theta-1}\left[A \rho^{\theta-1} \tau^{-\theta} + \frac{R_d}{M}\tilde\varphi^{1-\theta}\right] - f
+\]
+* Importantly,
+\[
+\frac{\pi(\varphi)+f}{\pi(\varphi')+f} = \left(\frac{\varphi}{\varphi'}\right)^{\theta-1}
+\]
+for any $\varphi$ and $\varphi'$ so that
+\[
+\pi(\varphi) = [\pi(\varphi')+f]\left(\frac{\varphi}{\varphi'}\right)^{\theta-1} -f.
+\]
+* Using this relationship for the ''representative firm'' ($\tilde\varphi$), we can write down
+    1. the zero-profit cutoff
+    2. and the free entry condition.
+
+== Zero-profit cutoff ==
+* The firm at the margin makes zero profit:
+\[
+0= \pi(\varphi^*) = [\pi(\tilde\varphi)+f]\left(\frac{\varphi^*}{\tilde\varphi}\right)^{\theta-1} -f.
+\]
+* Average profit:
+\[
+\pi(\tilde\varphi) = f\left[\left(\frac{\varphi^*}{\tilde\varphi}\right)^{1-\theta}-1\right]
+\]
+
+
+== Expressing average productivity ==
+* Again, average productivity depends on the cutoff:
+\[
+\tilde\varphi = \tilde\varphi(\varphi^*).
+\]
+    * This function only depends on the distribution of $\varphi$, $G()$.
+    * For the ''Pareto distribution'', it is 
+    \[
+    \tilde\varphi(\varphi^*) = k \varphi^*
+    \]
+    where $k>1$ is related to the shape parameter of the distribution.
+
+== Zero-profit cutoff ==
+* Under the Pareto distribution, average profit is independent of the cutoff:
+\[
+\pi(\tilde\varphi) = [k^{\theta-1}-1]f.
+\]
+* This is in fact the same equation as under closed economy.
+* (This latter would also hold for other distributions.)
+
+
+
+== Free entry ==
+* Free entry equates ''expected profits'' with entry costs:
+\[
+ [1-G(\varphi^*)]\pi(\tilde\varphi) = f_e.
+\]
+* Or, writing in average profits from the ZCF:
+\[
+ [1-G(\varphi^*)][k^{\theta-1}-1]f = f_e.
+\]
+* This pins down $\varphi^*$.
+* This is the same $\varphi^*$ as before.
+
+
+== Labor demand ==
+* Given zero profits (in expectation), wages still equal revenue
+\[
+ L = R_d + R_x.
+\]
+* Total revenue is also the same as before.
+* Because average profits are the same, so are average revenues.
+* But then the number of firms, $M$, is also the same.
+* Nothing changed. Why?
+
+
+
+
+
+= Fixed cost of exporting =
+
+== Fixed cost of exporting ==
+* To send any positive exports, a firm also has to pay a fixed cost $f_x$.
+    * setting up distribution networks
+    * conforming to regulation
+    * catering to foreign tastes
+
+== Fixed cost of exporting ==
+* Now only some firms export.
+* These are not a random selection: they are the better ones.
+* There is a ''strict sorting'' property:
+    * all firms below a cutoff are non-exporters
+    * all firms above that cutoff are exporters
+* Importantly, 
+\[
+\frac{\pi(\varphi)+f}{\pi(\varphi')+f} = \left(\frac{\varphi}{\varphi'}\right)^{\theta-1}
+\]
+no longer holds.
+
+== Exporters vs nonexporters ==
+* Revenue:
+\[
+ r(\varphi) = \begin{cases}
+               r_d(\varphi) & \text{if not an exporter}\\
+        r_d(\varphi)+r_x(\varphi) & \text{if an exporter}
+              \end{cases}
+\]
+* Employment:
+\[
+ l(\varphi) = \begin{cases}
+               \rho r_d(\varphi) & \text{if not an exporter}\\
+        \rho[r_d(\varphi)+r_x(\varphi)] & \text{if an exporter}
+              \end{cases}
+\]
+* Exporters are bigger in both respect (reallocation!).
+
+
+
+== The decision to export ==
+* A firm with productivity $\varphi$ exports if export profits exceed fixed costs,
+\[
+(1-\rho)r_x(\varphi)=A \rho^{\theta-1} \tau^{-\theta}\varphi^{\theta-1}\geq
+f_x.
+\]
+* Firms above a threshold $\varphi^*_x$ will export, others will not.
+
+
+
+== Aggregation ==
+* $\tilde\varphi_x$ is the average productivity of ''exporters'':
+\[
+ \tilde{\varphi}_{x}=\left[ \frac{1}{M_{x}}\int_{\Omega _{x}}\left( \varphi
+\left( \omega \right) \right) ^{\theta -1}d\omega \right] ^{\frac{1}{\theta
+-1}}
+\]
+* Relative export sales:
+\[
+\frac{r_x(\varphi)}{r_x(\tilde\varphi_x)} = \left(\frac{\varphi}{\tilde\varphi_x}\right)^{\theta-1}
+\]
+* This implies for ''export profits'' (but not for total profits)
+\[
+\frac{\pi_x(\varphi)+f_x}{\pi_x(\tilde\varphi_x)+f_x} = \left(\frac{\varphi}{\tilde\varphi_x}\right)^{\theta-1}
+\]
+
+
+== Zero-profit cutoffs ==
+* Now we have two zero-profit cutoffs: one for operation, one for exports.
+\begin{align*}
+\pi(\varphi^*) = \pi_d(\varphi^*) &= 0\\
+\pi_x(\varphi^*_x) &= 0
+\end{align*}
+* (The first equation follows from the fact the the smallest firm does not export.)
+* Using the previous methods, these pin down average export and domestic profits:
+\begin{align*}
+\pi_d(\tilde \varphi) &= [k^{\theta-1}-1]f,\\
+\pi_x(\tilde \varphi) &= [k^{\theta-1}-1]f_x.
+\end{align*}
+* Up till now, profits from the two markets could be treated more or less independent from one another.
+* However, not all firms receive $\pi_x$.
+
+
+== Free entry ==
+* Ex ante expected profit is now the sum of two terms:
+\[
+E(\pi) = E(\pi_d) + E(\pi_x) = [1-G(\varphi^*)]\pi_d(\tilde\varphi) 
++[1-G(\varphi^*_x)]\pi_x(\tilde\varphi_x)
+\]
+* This has to equal entry costs, $f_e$.
+* Or, writing in average profits from the ZCF:
+\[
+[k^{\theta-1}-1]\left\{[1-G(\varphi^*)]f 
++[1-G(\varphi^*_x)]f_x\right\} = f_e.
+\]
+* This now pins down a ''combination'' of $\varphi^*$ and $\varphi^*_x$.
+
+== Export and exit ==
+* Lower $\varphi^*_x$ implies higher $\varphi^*$.
+* If more firms export, this is because export profits are greater.
+* This encourages more new firms to enter the industry.
+* The least productive firms cannot compete with these new entrants and hence they exit.
+
+
+== Closing the model ==
+* We still have 2 unknowns for 1 equation.
+* We introduce 1 more unknown: $M$, the number of firms.
+* We then use 2 market clearings: domestic and foreign.
+
+== Export demand ==
+* For the marginal exporter,
+\[
+\pi_x(\varphi^*_x) = 0.
+\]
+* But we can actually use ''export demand'' to express its profits:
+\[
+(1-\rho)A \rho^{\theta-1} \tau^{-\theta}\varphi^*_x{}^{\theta-1} = f_x.
+\]
+* This pins down the cutoff as
+\[
+\varphi^*_x{} = \left(\frac{f_x}{(1-\rho)A}\right)^{1/(\theta-1)} \frac{\tau}{\rho}.
+\]
+    * This is increasing $\tau$,
+    * decreasing in $A$.
+
+== Domestic cutoff ==
+* The domestic cutoff is then
+    * decreasing $\tau$,
+    * increasing in $A$.
+
+== Labor demand ==
+* Because ''in expectation'' firms make zero profit,
+\[
+ L = R_d+R_x.
+\]
+* Total revenues are average times number of firms:
+\[
+ L = R_d+R_x = Mr_d(\tilde\varphi)+M_xr_x(\tilde\varphi_x)
+\]
+* Conditional on the total number of firms, the number of exporters:
+\[
+\frac{M_x}{M} = \frac{1-G(\varphi^*_x)}{1-G(\varphi^*)}.
+\]
+* The labor market clearing then pins down $M$.
+
+== The three effects ==
+In the event of a trade liberalization (falling trade costs),
+1. more firms will export ("extensive margin"),
+2. labor is reallocated from less productive non-exporters to more productive exporters,
+3. and least productive non-exporters will exit. 
+...
+We conduct comparative statics wrt $\tau$.
+
+== Extensive margin ==
+* The fraction of exporters $M_x/M$ is decreasing in the export cutoff.
+* Recall that export cutoff,
+\[
+\varphi^*_x{} = \left(\frac{f_x}{(1-\rho)A}\right)^{1/(\theta-1)} \frac{\tau}{\rho},
+\]
+is increasing in $\tau$.
+* Hence $M_x/M$ increases with trade liberalization.
+
+== Labor reallocation ==
+* A constant $\rho$ fraction of revenue goes to labor:
+\[
+l(\varphi) = \rho r(\varphi).
+\]
+* Relative employment for an exporter and a non-exporter:
+\[
+\frac{l(\varphi|\varphi>\varphi^*_x)}{l(\varphi'|\varphi'<\varphi^*_x)} = 
+\frac{r_d(\varphi)+r_x(\varphi)}{r_d(\varphi')} = 
+\left(\frac{\varphi}{\varphi'}\right)^{\theta-1}
+\frac{A \rho^{\theta-1} \tau^{-\theta} + \frac{R_d}{M}\tilde\varphi^{1-\theta}}{\frac{R_d}{M}\tilde\varphi^{1-\theta}}
+\]
+* This is clearly ''decreasing'' in $\tau$.
+* After trade liberalization, exporters expand relative to non-exporters.
+
+== Exit ==
+* As discussed before, export profit opportunities generate more entry.
+* New entrants squeeze out less productive firms.
